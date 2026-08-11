@@ -1,17 +1,37 @@
-import Director from "../assets/images/DirectorProfile.png";
-import ABD from "../assets/images/ABDProfile.png";
-import ABBY from "../assets/images/Abby.JPG";
-import DIVIE from "../assets/images/Divie.JPG";
-import ROGER from "../assets/images/Roger.JPG";
-import RUTSEN from "../assets/images/Rutsen.JPG";
-import MAYZEL from "../assets/images/Mayzel.JPG";
-import GERCY from "../assets/images/Gercy.JPG";
-import FLOR from "../assets/images/Flor.JPG";
-import LEA from "../assets/images/Lea.JPG";
-import NADINE from "../assets/images/Nadine.JPG";
-import RHENCY from "../assets/images/Rhency.JPG";
-import HAROLD from "../assets/images/Harold.JPG";
-import DADA from "../assets/images/Dada.JPG";
+//OBD
+import Director from "../assets/obd/DirectorProfile.png";
+import ABD from "../assets/obd/ABDProfile.png";
+import ABBY from "../assets/obd/Abby.JPG";
+import DIVIE from "../assets/obd/Divie.JPG";
+import ROGER from "../assets/obd/Roger.JPG";
+import RUTSEN from "../assets/obd/Rutsen.JPG";
+import MAYZEL from "../assets/obd/Mayzel.JPG";
+import GERCY from "../assets/obd/Gercy.JPG";
+import FLOR from "../assets/obd/Flor.JPG";
+import LEA from "../assets/obd/Lea.JPG";
+import NADINE from "../assets/obd/Nadine.JPG";
+import RHENCY from "../assets/obd/Rhency.JPG";
+import HAROLD from "../assets/obd/Harold.JPG";
+import DADA from "../assets/obd/Dada.JPG";
+
+//KM
+import ANGESSE from '../assets/kmd/Angesse.JPG';
+import MAC from '../assets/kmd/Mac.JPG';
+import ALMA from '../assets/kmd/Alma.JPG';
+import DAN from '../assets/kmd/Dan.JPG';
+import JANE from '../assets/kmd/Jane.JPG';
+import INAH from '../assets/kmd/Inah.JPG';
+import JAS from '../assets/kmd/Jas.JPG';
+import NATE from '../assets/kmd/Nate.JPG';
+import NOI from '../assets/kmd/Noi.JPG';
+import TERE from '../assets/kmd/Tere.JPG';
+import DALE from '../assets/kmd/Dale.JPG';
+import DANA from '../assets/kmd/Dana.JPG';
+import ELLA from '../assets/kmd/Ella.JPG';
+import PIM from '../assets/kmd/Pim.jpg';
+import MONICA from '../assets/kmd/Monica.JPG';
+import AUDREY from '../assets/kmd/Audrey.JPG';
+import TONY from '../assets/kmd/Tony.JPG'
 
 export const CLASSIFICATION_STYLES = {
   director: {
@@ -257,20 +277,24 @@ export const orgData = {
       leads: [
         {
           title: 'SWO V',
-          type: 'cos',
-          name: 'N/A',
-          nickname: 'N/A',
-          image: null,
+          type: 'permanent',
+          name: 'Marigrace D. Mateum',
+          nickname: 'Angesse',
+          image: ANGESSE,
+          email: 'mdmateum@dswd.gov.ph',
           phone: 'N/A',
+          profession: 'N/A',
           tasks: ['N/A']
         },
         {
           title: 'TS IV',
           type: 'permanent',
-          name: 'N/A',
+          name: 'VACANT',
           nickname: 'N/A',
           image: null,
+          email: '',
           phone: 'N/A',
+          profession: 'N/A',
           tasks: ['N/A']
         }
       ],
@@ -280,74 +304,383 @@ export const orgData = {
           title: 'Knowledge Products & Services Section',
           pairs: [
             [
-              { title: 'PDO IV', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'AO IV', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'PDO IV',
+                type: 'cos',
+                name: 'Mac Quay P. Labasano',
+                nickname: 'Mac',
+                image: MAC,
+                email: 'mqplabasano@dswd.gov.ph',
+                phone: 'N/A',
+                profession: 'N/A',
+                tasks: ['N/A']
+              },
+              { title: 'AO IV',
+                type: 'cos',
+                name: 'Iana Sherrence O. Rivera',
+                nickname: 'IANA',
+                image: null,
+                email: 'isorivera@dswd.gov.ph',
+                phone: 'N/A',
+                profession: 'N/A',
+                tasks: ['N/A']
+              }
             ],
             [
-              { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'SWO III', 
+                type: 'permanent', 
+                name: 'Alma M. David', 
+                nickname: 'Alma', 
+                image: ALMA, 
+                email: 'amdavid@dswd.gov.ph',
+                phone: 'N/A',
+                profession: 'N/A',
+                tasks: ['N/A']
+              },
+              { 
+                title: 'TS III', 
+                type: 'permanent', 
+                name: 'Daniel D. Alejandre', 
+                nickname: 'Dan', 
+                image: DAN, 
+                email: 'ddalejandre@dswd.gov.ph',
+                phone: 'N/A',
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'ITO II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'ITO II', 
+                type: 'cos', 
+                name: 'VACANT', 
+                nickname: 'N/A', 
+                image: null,
+                email: '', 
+                phone: 'N/A',
+                profession: 'N/A',
+                tasks: ['N/A']
+              },
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'N/A', 
+                nickname: 'N/A', 
+                image: null,
+                email: '', 
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'Permanent', 
+                name: 'Jane A. Baldino', 
+                nickname: 'Jane', 
+                image: JANE,
+                email: 'jabaldino@dswd.gov.ph', 
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Jessica Inah C. Pangan', 
+                nickname: 'Inah', 
+                image: INAH,
+                email: 'jicpangan@dswd.gov.ph', 
+                phone: 'N/A',
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Jake Remphsy P. Dy', 
+                nickname: 'Jake', 
+                image: null, 
+                email: 'jrpdy@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS II', 
+                type: 'cos', 
+                name: 'N/A', 
+                nickname: 'N/A', 
+                image: null, 
+                email: '',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'LIB II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'contractual', 
+                name: 'Jasmine E. Nacabuan', 
+                nickname: 'Jas', 
+                image: JAS, 
+                email: 'jenacabuan@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'LIB II', 
+                type: 'permanent', 
+                name: 'Jonathan P. Futalan', 
+                nickname: 'Nate', 
+                image: NATE, 
+                email: 'jpfutalan@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'PDO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Noivel C. Badillo', 
+                nickname: 'Noi', 
+                image: NOI, 
+                email: 'ncbadillo@dswd.gov.ph',
+                phone: 'N/A',
+                profession: 'N/A', 
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'PDO III', 
+                type: 'cos', 
+                name: 'Maria Theresa M. Reyes', 
+                nickname: 'Tere', 
+                image: TERE, 
+                email: 'mtmreyes@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Allendale M. De Luna', 
+                nickname: 'Dale', 
+                image: DALE, 
+                email: 'amdeluna@dswd.gov.ph',
+                phone: 'N/A',
+                profession: 'N/A', 
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'SWO III', 
+                type: 'cos', 
+                name: 'Danallyn R. Misanes', 
+                nickname: 'Dana', 
+                image: DANA, 
+                email: 'drmisanes@dswd.gov.ph',
+                phone: 'N/A',
+                profession: 'N/A', 
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'N/A', 
+                nickname: 'N/A', 
+                image: null, 
+                email: '',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'SWO III', 
+                type: 'cos', 
+                name: 'Kristine C. Peralta',
+                nickname: 'N/A', 
+                image: null, 
+                email: 'kcperalta@dswd.gov.ph',
+                phone: 'N/A',
+                profession: 'N/A', 
+                tasks: ['N/A'] }
             ]
           ],
-          bottomNode: { title: 'AA II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+          bottomNode: { 
+            title: 'AA II', 
+            type: 'cos', 
+            name: 'John Ronald Bascon', 
+            nickname: 'N/A', 
+            image: null,
+            email: 'jrbascon@dswd.gov.ph', 
+            phone: 'N/A', 
+            tasks: ['N/A'] }
         },
         {
           id: 'oms',
           title: 'Operations and Marketing Section',
           pairs: [
             [
-              { title: 'SWO III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'PDO III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'SWO III', 
+                type: 'permanent', 
+                name: 'Elladonna M. Agor', 
+                nickname: 'Ella', 
+                image: ELLA, 
+                email: 'emagor@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'PDO III', 
+                type: 'cos', 
+                name: 'Efricor B. Sakilayan', 
+                nickname: 'Pim', 
+                image: PIM, 
+                email: 'ebsakilayan@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'N/A', 
+                nickname: 'N/A', 
+                image: null, 
+                phone: 'N/A', 
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'SWO III', 
+                type: 'cos', 
+                name: 'Monica S. Solesta', 
+                nickname: 'Monica', 
+                image: MONICA, 
+                email: 'mssolesta@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'AO V', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'AO V', 
+                type: 'cos', 
+                name: 'Virginia W Setias', 
+                nickname: 'Che', 
+                image: null, 
+                email: 'vwsetias@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'SWO III', 
+                type: 'cos', 
+                name: 'Audrey Mae B. Ayap', 
+                nickname: 'Audrey', 
+                image: AUDREY, 
+                email: 'ambayap@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'MDO II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'HHA III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'MDO II', 
+                type: 'permanent', 
+                name: 'Anthony Z. Contreras', 
+                nickname: 'Tony', 
+                image: TONY, 
+                email: 'azcontreras@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { title: 'HHA III', 
+                type: 'cos', 
+                name: 'Jelly D. Orcales', 
+                nickname: 'N/A', 
+                image: null,
+                email: 'jdorcales@dswd.gov.ph', 
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS I', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'HHA III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS I', 
+                type: 'cos', 
+                name: 'VACANT', 
+                nickname: 'N/A', 
+                image: null, 
+                phone: 'N/A', 
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'HHA III', 
+                type: 'cos', 
+                name: 'Jhon Leo A. Toledo', 
+                nickname: 'Leo', 
+                image: null,
+                email: 'jlatoledo@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS I', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'HHA III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS I', 
+                type: 'cos', 
+                name: 'VACANT', 
+                nickname: 'N/A', 
+                image: null, 
+                phone: 'N/A', 
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'HHA III', 
+                type: 'cos', 
+                name: 'Lowegie S. Saliendres', 
+                nickname: 'Lowe', 
+                image: null, 
+                email: 'lssaliendres@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ]
           ],
-          bottomNode: { title: 'HHA III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+          bottomNode: { 
+            title: 'HHA III', 
+            type: 'cos', 
+            name: 'Glenn M. Lozano', 
+            nickname: 'Glenn', 
+            image: null, 
+            email: 'gmlozano@dswd.gov.ph',
+            phone: 'N/A', 
+            profession: 'N/A',
+            tasks: ['N/A'] 
+          }
         }
       ]
     },
