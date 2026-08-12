@@ -33,6 +33,10 @@ import MONICA from '../assets/kmd/Monica.JPG';
 import AUDREY from '../assets/kmd/Audrey.JPG';
 import TONY from '../assets/kmd/Tony.JPG'
 
+//CBD
+import DC from '../assets/cbd/DC.JPG';
+
+
 export const CLASSIFICATION_STYLES = {
   director: {
     bg: 'bg-amber-50/90 hover:bg-amber-100/90',
@@ -690,11 +694,13 @@ export const orgData = {
       leads: [
         {
           title: 'SWO V',
-          type: 'cos',
-          name: 'N/A',
-          nickname: 'N/A',
-          image: null,
+          type: 'permanent',
+          name: 'Efleda Joyce S. Consulta',
+          nickname: 'Joesa',
+          image: DC,
+          email: 'ejsconsulta@dswd.gov.ph',
           phone: 'N/A',
+          profession: 'N/A',
           tasks: ['N/A']
         }
       ],
@@ -704,44 +710,242 @@ export const orgData = {
           title: 'Professional Learning & Development Section',
           pairs: [
             [
-              { title: 'TS IV', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'PDO II', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS IV', 
+                type: 'cos', 
+                name: 'Jesica S. Mencias', 
+                nickname: 'Jes', 
+                image: null,
+                email: 'jsmencias@dswd.gov.ph', 
+                phone: 'N/A',
+                profession: 'N/A', 
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'PDO II', 
+                type: 'permanent', 
+                name: 'Louie Jane R. Francisco', 
+                nickname: 'LJ', 
+                image: null,
+                email: 'ljrfrancisco@dswd.gov.ph', 
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'PDO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'PDO IV', 
+                type: 'cos', 
+                name: 'Jan Paolo M. Leyva', 
+                nickname: 'Pao', 
+                image: null, 
+                email: 'jpmleyva@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS II', 
+                type: 'permanent', 
+                name: 'Orchid S. Bibit', 
+                nickname: 'Ms. O', 
+                image: null, 
+                email: 'osbibit@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'permanent', 
+                name: 'Althea Muriel L. Pineda', 
+                nickname: 'Thea', 
+                image: null, 
+                email: 'amlpineda@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS IV', 
+                type: 'cos', 
+                name: 'Carmina A. Llanto', 
+                nickname: 'Mina', 
+                image: null, 
+                email: 'callanto@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Ma. Erica Ruby F. Fernandez', 
+                nickname: 'Ruby', 
+                image: null, 
+                email: 'merffernandez@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS IV', 
+                type: 'contractual', 
+                name: 'Marry Ann Dealo', 
+                nickname: 'Meann', 
+                image: null, 
+                email: 'matdealo@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'PDO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'PDO III', 
+                type: 'cos', 
+                name: 'Tonghie R. Sy Jr.', 
+                nickname: 'CJ', 
+                image: null, 
+                email: 'trsyjr@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'Web Developer',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Jovie D. Cabais', 
+                nickname: 'Jovie', 
+                image: null,
+                email: 'jdcabais@dswd.gov.ph', 
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'PDO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'PDO III', 
+                type: 'cos', 
+                name: 'Eddniel Patrick I. Papa', 
+                nickname: 'Edd', 
+                image: null, 
+                email: 'epipapa@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Merielle O. Palacio', 
+                nickname: 'Merl', 
+                image: null, 
+                email: 'mopalacio@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Kent B. Gaspar', 
+                nickname: 'Kent', 
+                image: null, 
+                email: 'kbgaspar@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS III', 
+                type: 'permanent', 
+                name: 'Nancy E. Fortes', 
+                nickname: 'Nancy', 
+                image: null, 
+                email: 'nefortes@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A']
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Mark Angel Malapira', 
+                nickname: 'Angel', 
+                image: null, 
+                email: 'mamalapira@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'mamalapira@dswd.gov.ph',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS II', 
+                type: 'contractual', 
+                name: 'Maria Clarissa D. Raquinel', 
+                nickname: 'Cla', 
+                image: null,
+                email: 'mcdraquinel@dswd.gov.ph', 
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'TS II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Klenarchi Mae E. Flores', 
+                nickname: 'Kleng', 
+                image: null, 
+                email: 'kmeflores@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Nikkita Lyka Gracia L. Ermino', 
+                nickname: 'Lyka', 
+                image: null, 
+                email: 'nlglermino@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'PDO II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Jocelyn M. Edillo', 
+                nickname: 'Jo', 
+                image: null, 
+                email: 'jmedillo@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'PDO II', 
+                type: 'cos', 
+                name: 'VACANT', 
+                nickname: 'N/A', 
+                image: null, 
+                phone: 'N/A', 
+                tasks: ['N/A'] 
+              }
             ],
             [
               { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
