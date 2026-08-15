@@ -705,7 +705,7 @@ function OrgTree({ node, onInspect, searchQuery }) {
 
               <div className="absolute top-[24px] left-1/2 w-[600px] h-[2.5px] bg-slate-500 z-0 pointer-events-none print-tree-connector-h" />
 
-              <div className="absolute top-0 left-[680px] -translate-x-1/2 flex flex-col items-center">
+              <div className="absolute top-0 left-[820px] -translate-x-1/2 flex flex-col items-center">
                 <CollapsibleHeader
                   title={node.obd.title}
                   isOpen={showObd}
@@ -757,7 +757,7 @@ function OrgTree({ node, onInspect, searchQuery }) {
             </div>
           </div>
 
-          <div style={{ height: showObd ? '780px' : '90px' }} className="transition-all duration-300 w-full" />
+          <div style={{ height: showObd ? '820px' : '80px' }} className="transition-all duration-300 w-full" />
         </div>
       )}
 
