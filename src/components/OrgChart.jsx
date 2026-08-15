@@ -3,40 +3,76 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ZoomIn, ZoomOut, RotateCcw, X, Mail, Phone, ChevronDown,
-  User, Briefcase, CheckCircle2, Sparkles, Printer, Sliders, ListChecks,
-  Check, Copy
+  User, Briefcase, CheckCircle2, Sparkles, Printer, Sliders,
+  Check, Copy, UserX, Search
 } from 'lucide-react';
 
 import { orgData, CLASSIFICATION_STYLES } from '../data/orgData';
 import tabgBg from '../assets/TABG.png';
 
-// --- DYNAMIC CONNECTOR COMPONENT ---
-function TreeBranch({ children, count, gap = 48 }) {
+// Fallback styling for vacant nodes
+const DEFAULT_VACANT_STYLE = {
+  bg: 'bg-slate-50/90 hover:bg-slate-100',
+  border: 'border-slate-300 border-dashed',
+  titleText: 'text-slate-700',
+  nameText: 'text-slate-400 italic',
+  tag: 'VACANT',
+  tagBg: 'bg-slate-200',
+  tagText: 'text-slate-700',
+  accent: 'from-slate-400 to-slate-500'
+};
+
+function matchesSearch(item, query) {
+  if (!query || !item) return false;
+  const q = query.toLowerCase().trim();
+  if (!q) return false;
+
+  const title = (item.title || '').toLowerCase();
+  const name = (item.name || '').toLowerCase();
+  const type = (item.type || '').toLowerCase();
+  const profession = (item.profession || '').toLowerCase();
+  const nickname = (item.nickname || '').toLowerCase();
+  const email = (item.email || '').toLowerCase();
+  const tasks = Array.isArray(item.tasks) ? item.tasks.join(' ').toLowerCase() : '';
+
   return (
-    <div className="relative flex justify-center items-start w-full pt-8" style={{ gap: `${gap}px` }}>
-      <svg className="absolute top-0 left-0 w-full h-8 pointer-events-none z-0">
-        <g className="print-line" stroke="#64748b" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="50%" y1="0" x2="50%" y2="16" />
+    title.includes(q) ||
+    name.includes(q) ||
+    type.includes(q) ||
+    profession.includes(q) ||
+    nickname.includes(q) ||
+    email.includes(q) ||
+    tasks.includes(q)
+  );
+}
+
+// --- DYNAMIC CONNECTOR COMPONENT ---
+function TreeBranch({ children, count, gap = 64 }) {
+  return (
+    <div className="relative flex justify-center items-start w-full pt-10" style={{ gap: `${gap}px` }}>
+      <svg className="absolute top-0 left-0 w-full h-10 pointer-events-none z-0">
+        <g className="print-line" stroke="#64748b" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="50%" y1="0" x2="50%" y2="20" />
           {count > 1 ? (
             <>
               <line
                 x1={`${(1 / (2 * count)) * 100}%`}
-                y1="16"
+                y1="20"
                 x2={`${(1 - 1 / (2 * count)) * 100}%`}
-                y2="16"
+                y2="20"
               />
               {Array.from({ length: count }).map((_, i) => (
                 <line
                   key={i}
                   x1={`${((2 * i + 1) / (2 * count)) * 100}%`}
-                  y1="16"
+                  y1="20"
                   x2={`${((2 * i + 1) / (2 * count)) * 100}%`}
-                  y2="32"
+                  y2="40"
                 />
               ))}
             </>
           ) : (
-            <line x1="50%" y1="16" x2="50%" y2="32" />
+            <line x1="50%" y1="20" x2="50%" y2="40" />
           )}
         </g>
       </svg>
@@ -46,9 +82,9 @@ function TreeBranch({ children, count, gap = 48 }) {
 }
 
 // --- VERTICAL CONNECTOR ---
-function VerticalLine({ height = 24, dashed = false }) {
+function VerticalLine({ height = 28, dashed = false }) {
   return (
-    <svg className="w-2 pointer-events-none shrink-0" style={{ height: `${height}px` }}>
+    <svg className="w-2.5 pointer-events-none shrink-0" style={{ height: `${height}px` }}>
       <line
         className="print-line"
         x1="50%"
@@ -56,8 +92,8 @@ function VerticalLine({ height = 24, dashed = false }) {
         x2="50%"
         y2="100%"
         stroke="#64748b"
-        strokeWidth="2"
-        strokeDasharray={dashed ? "4 4" : "none"}
+        strokeWidth="2.5"
+        strokeDasharray={dashed ? "5 5" : "none"}
       />
     </svg>
   );
@@ -70,18 +106,24 @@ export default function OrgChart() {
   const [panY, setPanY] = useState(20);
   const [showSliders, setShowSliders] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  // Dynamic bounds state
   const [bounds, setBounds] = useState({
-    minX: -1000,
-    maxX: 1000,
-    minY: -800,
-    maxY: 400
+    minX: -5000,
+    maxX: 5000,
+    minY: -5000,
+    maxY: 5000
   });
 
   const viewportRef = useRef(null);
   const contentRef = useRef(null);
   const dragStartRef = useRef({ x: 0, y: 0, panX: 0, panY: 0 });
+  const panRef = useRef({ x: 0, y: 20 });
+  const animFrameRef = useRef(null);
+
+  useEffect(() => {
+    panRef.current = { x: panX, y: panY };
+  }, [panX, panY]);
 
   const updateBounds = useCallback(() => {
     if (!viewportRef.current || !contentRef.current) return bounds;
@@ -89,23 +131,33 @@ export default function OrgChart() {
     const vRect = viewportRef.current.getBoundingClientRect();
     const cRect = contentRef.current.getBoundingClientRect();
 
-    const calculatedMaxX = Math.max(300, Math.round((cRect.width + vRect.width * 0.5) / 2));
-    
-    // Scale-aware vertical bounds adjustment to prevent bottom whitespace overrun
-    const effectiveHeight = cRect.height * scale;
-    const calculatedMinY = Math.round(-effectiveHeight * 0.65);
-    const calculatedMaxY = Math.max(200, Math.round(vRect.height * 0.35));
+    const currentWidth = cRect.width * scale;
+    const currentHeight = cRect.height * scale;
+
+    const horizontalMargin = Math.max(vRect.width * 1.5, currentWidth * 1.5);
+    const verticalMargin = Math.max(vRect.height * 1.5, currentHeight * 1.5);
 
     const newBounds = {
-      minX: -calculatedMaxX,
-      maxX: calculatedMaxX,
-      minY: calculatedMinY,
-      maxY: calculatedMaxY
+      minX: -Math.round(horizontalMargin),
+      maxX: Math.round(horizontalMargin),
+      minY: -Math.round(verticalMargin),
+      maxY: Math.round(verticalMargin)
     };
 
-    setBounds(newBounds);
+    setBounds((prevBounds) => {
+      if (
+        prevBounds.minX === newBounds.minX &&
+        prevBounds.maxX === newBounds.maxX &&
+        prevBounds.minY === newBounds.minY &&
+        prevBounds.maxY === newBounds.maxY
+      ) {
+        return prevBounds;
+      }
+      return newBounds;
+    });
+
     return newBounds;
-  }, [bounds, scale]);
+  }, [scale]);
 
   const clampPan = useCallback((targetX, targetY) => {
     const currentBounds = updateBounds();
@@ -119,7 +171,6 @@ export default function OrgChart() {
     updateBounds();
   }, [scale, updateBounds]);
 
-  // Handle Zoom & Pan via Wheel
   useEffect(() => {
     const container = viewportRef.current;
     if (!container) return;
@@ -129,51 +180,74 @@ export default function OrgChart() {
       if (e.ctrlKey || e.metaKey) {
         setScale((prev) => Math.min(Math.max(parseFloat((prev - e.deltaY * 0.0015).toFixed(2)), 0.15), 1.5));
       } else {
-        setPanX((prevX) => {
-          setPanY((prevY) => {
-            const clamped = clampPan(prevX - e.deltaX, prevY - e.deltaY);
-            return clamped.y;
-          });
-          const clamped = clampPan(prevX - e.deltaX, panY);
-          return clamped.x;
-        });
+        const clamped = clampPan(panRef.current.x - e.deltaX, panRef.current.y - e.deltaY);
+        setPanX(clamped.x);
+        setPanY(clamped.y);
       }
     };
 
     container.addEventListener('wheel', handleWheel, { passive: false });
     return () => container.removeEventListener('wheel', handleWheel);
-  }, [panY, clampPan]);
+  }, [clampPan]);
 
-  const handlePointerDown = (e) => {
-    if (e.button !== 0 && e.pointerType === 'mouse') return;
-    if (e.target.closest('button') || e.target.closest('input')) return;
+  const handleDragStart = (clientX, clientY, target) => {
+    if (target.closest('.interactive-node') || target.closest('button') || target.closest('input')) {
+      return;
+    }
 
     setIsDragging(true);
     dragStartRef.current = {
-      x: e.clientX,
-      y: e.clientY,
-      panX,
-      panY,
+      x: clientX,
+      y: clientY,
+      panX: panRef.current.x,
+      panY: panRef.current.y,
     };
   };
 
-  const handlePointerMove = (e) => {
+  const handleMouseDown = (e) => {
+    if (e.button !== 0) return;
+    handleDragStart(e.clientX, e.clientY, e.target);
+  };
+
+  const handleTouchStart = (e) => {
+    if (e.touches.length === 1) {
+      handleDragStart(e.touches[0].clientX, e.touches[0].clientY, e.target);
+    }
+  };
+
+  const handleDragMove = (clientX, clientY) => {
     if (!isDragging) return;
 
-    const deltaX = e.clientX - dragStartRef.current.x;
-    const deltaY = e.clientY - dragStartRef.current.y;
+    const deltaX = clientX - dragStartRef.current.x;
+    const deltaY = clientY - dragStartRef.current.y;
 
     const targetX = dragStartRef.current.panX + deltaX;
     const targetY = dragStartRef.current.panY + deltaY;
 
-    const { x, y } = clampPan(targetX, targetY);
+    const clamped = clampPan(targetX, targetY);
+    panRef.current = clamped;
 
-    setPanX(x);
-    setPanY(y);
+    if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
+    animFrameRef.current = requestAnimationFrame(() => {
+      if (contentRef.current) {
+        contentRef.current.style.transform = `translate3d(${clamped.x}px, ${clamped.y}px, 0px) scale(${scale})`;
+      }
+    });
   };
 
-  const handlePointerUp = () => {
+  const handleMouseMove = (e) => handleDragMove(e.clientX, e.clientY);
+  const handleTouchMove = (e) => {
+    if (e.touches.length === 1) {
+      handleDragMove(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  };
+
+  const handleDragEnd = () => {
+    if (!isDragging) return;
     setIsDragging(false);
+    if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
+    setPanX(panRef.current.x);
+    setPanY(panRef.current.y);
   };
 
   const handleReset = () => {
@@ -182,10 +256,13 @@ export default function OrgChart() {
     setPanY(20);
   };
 
+  const handleNodeInspect = (item) => {
+    setSelectedNode(item);
+  };
+
   return (
     <div className="w-full h-screen flex flex-col bg-slate-100 text-slate-800 select-none relative overflow-hidden font-sans print:h-auto print:w-full print:bg-white print:overflow-visible">
       
-      {/* PRINT STYLES */}
       <style>{`
         @media print {
           @page {
@@ -217,7 +294,7 @@ export default function OrgChart() {
             top: 0 !important;
             left: 0 !important;
             width: 100% !important;
-            height: 20mm !important;
+            height: 22mm !important;
             background: #ffffff !important;
             border-bottom: 2px solid #cbd5e1 !important;
             z-index: 100 !important;
@@ -248,7 +325,7 @@ export default function OrgChart() {
           }
 
           .print-wrapper {
-            transform: scale(0.38) !important;
+            transform: scale(0.32) !important;
             transform-origin: top center !important;
             margin: 0 auto !important;
             padding-top: 20px !important;
@@ -272,18 +349,18 @@ export default function OrgChart() {
           .print-tree-connector {
             background-color: #1e293b !important;
             background: #1e293b !important;
-            width: 3px !important;
+            width: 3.5px !important;
           }
 
           .print-tree-connector-h {
             background-color: #1e293b !important;
             background: #1e293b !important;
-            height: 3px !important;
+            height: 3.5px !important;
           }
 
           svg line, svg g {
             stroke: #1e293b !important;
-            stroke-width: 3.5px !important;
+            stroke-width: 4px !important;
           }
 
           .obd-print-spacer {
@@ -299,25 +376,46 @@ export default function OrgChart() {
       />
 
       {/* Floating Canvas Controls */}
-      <div className="fixed bottom-6 right-6 z-40 bg-white/95 border border-slate-200/80 backdrop-blur-md flex flex-col gap-3 p-3.5 rounded-2xl shadow-2xl no-print min-w-[260px] transition-all duration-300">
-        <div className="flex items-center justify-between pb-2 border-b border-slate-100 text-slate-700">
+      <div className="fixed bottom-6 right-6 z-40 bg-white/95 border border-slate-200/80 backdrop-blur-md flex flex-col gap-3.5 p-4 rounded-2xl shadow-2xl no-print min-w-[300px] sm:min-w-[340px] transition-all duration-300">
+        <div className="relative w-full">
+          <div className="relative flex items-center">
+            <Search size={16} className="absolute left-3.5 text-slate-400 pointer-events-none" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search nodes..."
+              className="w-full pl-10 pr-9 py-2 text-xs font-semibold bg-slate-50 border border-slate-300 rounded-xl shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition-all text-slate-800 placeholder-slate-400"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-2.5 p-1 rounded-full hover:bg-slate-200 text-slate-400 hover:text-slate-600 transition-colors"
+                title="Clear search"
+              >
+                <X size={14} />
+              </button>
+            )}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between pb-1 border-b border-slate-100 text-slate-700">
           <span className="text-xs font-black uppercase tracking-wider flex items-center gap-1.5 text-slate-800">
             <Sliders size={14} className="text-blue-600" /> Canvas Controls
           </span>
 
           <button 
             onClick={() => setShowSliders(!showSliders)} 
-            className="group relative inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-black tracking-wider uppercase text-white rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-md shadow-blue-500/20 active:scale-95 transition-all duration-200"
+            className="group relative inline-flex items-center gap-1.5 px-3 py-1 text-[11px] font-black tracking-wider uppercase text-white rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-md shadow-blue-500/20 active:scale-95 transition-all duration-200"
           >
             <span>{showSliders ? 'Hide' : 'Show'}</span>
             <ChevronDown 
-              size={12} 
+              size={13} 
               className={`transition-transform duration-300 ${showSliders ? 'rotate-180' : 'rotate-0'}`} 
             />
           </button>
         </div>
 
-        {/* SLIDERS */}
         <AnimatePresence>
           {showSliders && (
             <motion.div 
@@ -325,7 +423,7 @@ export default function OrgChart() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.2, ease: 'easeInOut' }}
-              className="flex flex-col gap-2.5 text-[11px] font-bold text-slate-600 overflow-hidden pt-1"
+              className="flex flex-col gap-3 text-xs font-bold text-slate-600 overflow-hidden pt-1"
             >
               <div>
                 <div className="flex justify-between mb-1">
@@ -339,7 +437,7 @@ export default function OrgChart() {
                   step="0.01"
                   value={scale}
                   onChange={(e) => setScale(parseFloat(parseFloat(e.target.value).toFixed(2)))}
-                  className="w-full accent-blue-600 h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                  className="w-full accent-blue-600 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
                 />
               </div>
 
@@ -359,7 +457,7 @@ export default function OrgChart() {
                     const { x } = clampPan(val, panY);
                     setPanX(x);
                   }}
-                  className="w-full accent-blue-600 h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                  className="w-full accent-blue-600 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
                 />
               </div>
 
@@ -380,63 +478,66 @@ export default function OrgChart() {
                     const { y } = clampPan(panX, invertedY);
                     setPanY(y);
                   }}
-                  className="w-full accent-blue-600 h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                  className="w-full accent-blue-600 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
                 />
               </div>
             </motion.div>
           )}
         </AnimatePresence>
 
-        <div className="flex items-center gap-1.5 pt-1 border-t border-slate-100">
+        <div className="flex items-center gap-2 pt-1 border-t border-slate-100">
           <button
             onClick={() => setScale((s) => Math.min(parseFloat((s + 0.05).toFixed(2)), 1.5))}
-            className="p-2 hover:bg-slate-100 rounded-xl text-slate-700 transition-colors flex-1 flex justify-center active:scale-95"
+            className="p-2.5 hover:bg-slate-100 rounded-xl text-slate-700 transition-colors flex-1 flex justify-center active:scale-95"
             title="Zoom In"
           >
-            <ZoomIn size={16} />
+            <ZoomIn size={18} />
           </button>
           <button
             onClick={() => setScale((s) => Math.max(parseFloat((s - 0.05).toFixed(2)), 0.15))}
-            className="p-2 hover:bg-slate-100 rounded-xl text-slate-700 transition-colors flex-1 flex justify-center active:scale-95"
+            className="p-2.5 hover:bg-slate-100 rounded-xl text-slate-700 transition-colors flex-1 flex justify-center active:scale-95"
             title="Zoom Out"
           >
-            <ZoomOut size={16} />
+            <ZoomOut size={18} />
           </button>
           <button
             onClick={handleReset}
-            className="p-2 hover:bg-slate-100 rounded-xl text-slate-700 transition-colors flex-1 flex justify-center active:scale-95"
+            className="p-2.5 hover:bg-slate-100 rounded-xl text-slate-700 transition-colors flex-1 flex justify-center active:scale-95"
             title="Reset Position"
           >
-            <RotateCcw size={16} />
+            <RotateCcw size={18} />
           </button>
           <button
             onClick={() => window.print()}
-            className="p-2 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white rounded-xl transition-all flex-1 flex justify-center shadow-md shadow-blue-500/20"
+            className="p-2.5 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white rounded-xl transition-all flex-1 flex justify-center shadow-md shadow-blue-500/20"
             title="Print Chart"
           >
-            <Printer size={16} />
+            <Printer size={18} />
           </button>
         </div>
       </div>
 
       {/* Header Banner */}
-      <div className="w-full pt-4 pb-3 px-6 text-center bg-white/80 border-b border-slate-200 shrink-0 z-10 backdrop-blur-md shadow-sm flex flex-col items-center print-header">
-        <div className="inline-flex items-center gap-1.5 text-blue-700 text-xs font-bold tracking-wider uppercase mb-1 no-print">
-          <Sparkles size={14} /> Interactive Bureau Directory
+      <div className="w-full pt-4 pb-3.5 px-6 text-center bg-white/80 border-b border-slate-200 shrink-0 z-10 backdrop-blur-md shadow-sm flex flex-col items-center print-header">
+        <div className="inline-flex items-center gap-1.5 text-blue-700 text-xs font-extrabold tracking-wider uppercase mb-1 no-print">
+          <Sparkles size={15} /> Interactive Bureau Directory
         </div>
-        <h1 className="text-xl sm:text-2xl font-black uppercase tracking-wider text-slate-900 print:text-base">
+        <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-wider text-slate-900 print:text-lg">
           DSWD ACADEMY DYNAMIC BUREAU DIRECTORY
         </h1>
 
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-1.5 text-[10px] font-bold tracking-wider uppercase text-slate-800 print:text-[9px] print:mt-0">
-          <span className="flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-amber-100/80 border border-amber-300 text-amber-950 print:border-amber-600">
-            <span className="w-2 h-2 rounded-full bg-amber-600 shadow-xs" /> Permanent
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-5 mt-2 text-xs font-extrabold tracking-wider uppercase text-slate-800 print:text-[10px] print:mt-0">
+          <span className="flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100/80 border border-amber-300 text-amber-950 print:border-amber-600">
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-600 shadow-xs" /> Permanent
           </span>
-          <span className="flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-100/80 border border-emerald-300 text-emerald-950 print:border-emerald-600">
-            <span className="w-2 h-2 rounded-full bg-emerald-700 shadow-xs" /> Contract of Service
+          <span className="flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100/80 border border-emerald-300 text-emerald-950 print:border-emerald-600">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-700 shadow-xs" /> Contract of Service
           </span>
-          <span className="flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-sky-100/80 border border-sky-300 text-sky-950 print:border-sky-600">
-            <span className="w-2 h-2 rounded-full bg-sky-700 shadow-xs" /> Contractual
+          <span className="flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-100/80 border border-sky-300 text-sky-950 print:border-sky-600">
+            <span className="w-2.5 h-2.5 rounded-full bg-sky-700 shadow-xs" /> Contractual
+          </span>
+          <span className="flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-200/80 border border-slate-300 text-slate-800 print:border-slate-500">
+            <span className="w-2.5 h-2.5 rounded-full bg-slate-500 shadow-xs" /> Vacant
           </span>
         </div>
       </div>
@@ -444,11 +545,14 @@ export default function OrgChart() {
       {/* Main Viewport */}
       <div
         ref={viewportRef}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerLeave={handlePointerUp}
-        className={`w-full flex-1 overflow-hidden relative flex items-start justify-center pt-6 z-1 print-viewport ${
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleDragEnd}
+        onMouseLeave={handleDragEnd}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleDragEnd}
+        className={`w-full flex-1 overflow-hidden relative flex items-start justify-center pt-8 z-1 print-viewport touch-none ${
           isDragging ? 'cursor-grabbing' : 'cursor-grab'
         }`}
       >
@@ -460,9 +564,9 @@ export default function OrgChart() {
               willChange: 'transform',
               transformOrigin: 'top center'
             }}
-            className="p-8 flex justify-center items-start print-wrapper transition-transform duration-75 ease-out"
+            className="p-8 flex justify-center items-start print-wrapper"
           >
-            <OrgTree node={orgData} onInspect={setSelectedNode} />
+            <OrgTree node={orgData} onInspect={handleNodeInspect} searchQuery={searchQuery} />
           </div>
         </div>
       </div>
@@ -477,45 +581,68 @@ export default function OrgChart() {
   );
 }
 
-// --- LEAF CARD (ENLARGED CARD & IMAGE AVATARS) ---
-function LeafCard({ item, onInspect, width = 'w-64' }) {
-  const styles = CLASSIFICATION_STYLES[item.type] || CLASSIFICATION_STYLES.permanent;
+// --- LEAF CARD WITH ENLARGED TEXT & IMAGES ---
+function LeafCard({ item, onInspect, searchQuery = '' }) {
+  if (!item) return null;
+
+  const isVacant = item.type === 'vacant' || item.vacant === true;
+  const styles = isVacant
+    ? (CLASSIFICATION_STYLES?.vacant || DEFAULT_VACANT_STYLE)
+    : (CLASSIFICATION_STYLES?.[item.type] || CLASSIFICATION_STYLES?.permanent || DEFAULT_VACANT_STYLE);
+
+  const hasSearch = Boolean(searchQuery && searchQuery.trim().length > 0);
+  const isMatch = hasSearch && matchesSearch(item, searchQuery);
+
+  const highlightClass = hasSearch
+    ? isMatch
+      ? 'ring-4 ring-yellow-400 ring-offset-2 scale-[1.05] shadow-2xl z-30 opacity-100 transition-all duration-300 pointer-events-auto cursor-pointer'
+      : 'opacity-20 grayscale transition-all duration-300 pointer-events-none cursor-default'
+    : 'cursor-pointer';
 
   return (
     <motion.div
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.97 }}
+      whileHover={hasSearch && !isMatch ? {} : { scale: 1.02 }}
+      whileTap={hasSearch && !isMatch ? {} : { scale: 0.98 }}
       onClick={(e) => {
+        if (hasSearch && !isMatch) return;
         e.stopPropagation();
         onInspect(item);
       }}
-      className={`${width} min-h-[76px] p-3.5 rounded-2xl border-2 text-left cursor-pointer shadow-md z-10 flex items-center gap-4 relative group ${styles.bg} ${styles.border}`}
+      className={`interactive-node w-[420px] min-w-[420px] max-w-[420px] h-[120px] p-4 rounded-2xl border-2 text-left shadow-md z-10 flex items-center gap-4 relative shrink-0 group ${styles.bg} ${styles.border} ${highlightClass}`}
     >
+      {/* Enlarged Avatar / Profile Image */}
       {item.image ? (
         <img
           src={item.image}
           alt={item.title}
-          className="w-14 h-14 rounded-xl object-cover border-2 border-white shadow-sm shrink-0"
+          className="w-20 h-20 rounded-xl object-cover border-2 border-white shadow-sm shrink-0"
         />
+      ) : isVacant ? (
+        <div className="w-20 h-20 rounded-xl bg-slate-200/80 border-2 border-slate-300 flex items-center justify-center text-slate-500 shrink-0 shadow-xs">
+          <UserX size={36} />
+        </div>
       ) : (
-        <div className="w-14 h-14 rounded-xl bg-slate-200/90 border-2 border-slate-300 flex items-center justify-center text-xs font-black text-slate-700 shrink-0 shadow-xs">
-          {item.title ? item.title.substring(0, 3) : 'DSWD'}
+        <div className="w-20 h-20 rounded-xl bg-slate-200/90 border-2 border-slate-300 flex items-center justify-center text-xl font-black text-slate-800 shrink-0 shadow-xs">
+          {item.title ? item.title.split(' ')[0] : 'DSWD'}
         </div>
       )}
 
-      <div className="flex-1 min-w-0 pr-1">
-        <div className={`text-[13px] leading-snug font-black break-words ${styles.titleText}`}>
+      {/* Bigger, High-Contrast Typography */}
+      <div className="flex-1 min-w-0 pr-1 flex flex-col justify-center">
+        {/* Job Title / Designation */}
+        <div className="text-lg leading-tight font-black uppercase text-slate-900 tracking-tight truncate">
           {item.title}
         </div>
-        {item.name && (
-          <div className={`text-[11px] leading-tight font-semibold mt-0.5 break-words ${styles.nameText}`}>
-            {item.name}
-          </div>
-        )}
+        
+        {/* Full Name */}
+        <div className={`text-xl font-extrabold leading-tight mt-1 truncate ${isVacant ? 'text-slate-400 italic' : 'text-blue-950'}`}>
+          {isVacant ? (item.name || 'Unassigned / Vacant') : (item.name || '')}
+        </div>
       </div>
 
+      {/* Tag Badge */}
       {styles.tag && (
-        <span className={`absolute -top-2.5 right-3 text-[9px] font-black px-2 py-0.5 rounded-md shadow-xs print:hidden ${styles.tagBg} ${styles.tagText}`}>
+        <span className={`absolute -top-3.5 right-4 text-xs font-black px-3 py-0.5 rounded-md shadow-xs print:hidden ${styles.tagBg} ${styles.tagText}`}>
           {styles.tag}
         </span>
       )}
@@ -523,25 +650,25 @@ function LeafCard({ item, onInspect, width = 'w-64' }) {
   );
 }
 
-// --- COLLAPSIBLE HEADER ---
-function CollapsibleHeader({ title, isOpen, onToggle, width = 'w-80' }) {
+// --- COLLAPSIBLE HEADER (EXACT 420px MATCH) ---
+function CollapsibleHeader({ title, isOpen, onToggle }) {
   return (
     <div className="relative flex justify-center items-center shrink-0 z-20">
       <div 
-        className={`${width} py-3.5 px-5 rounded-xl bg-slate-900 hover:bg-slate-800 border-2 border-blue-500 text-white shadow-md flex items-center justify-center cursor-pointer transition-colors group relative print-clean-header print:py-1.5 print:px-2`}
+        className="interactive-node w-[420px] min-w-[420px] max-w-[420px] h-[64px] py-3 px-6 rounded-2xl bg-slate-900 hover:bg-slate-800 border-2 border-blue-500 text-white shadow-md flex items-center justify-center cursor-pointer transition-colors group relative print-clean-header print:py-2 print:px-3 shrink-0"
         onClick={(e) => {
           e.stopPropagation();
           onToggle();
         }}
       >
-        <span className="font-black text-[12px] uppercase tracking-wider text-center break-words leading-tight px-2 print:text-[10px]">
+        <span className="font-black text-base uppercase tracking-wider text-center break-words leading-tight px-2 print:text-xs">
           {title}
         </span>
 
-        <div className="absolute left-1/2 -bottom-3 -translate-x-1/2 z-30 no-print">
-          <div className="w-6 h-6 rounded-full bg-blue-600 border-2 border-white text-white group-hover:bg-blue-500 flex items-center justify-center shadow-md transition-all">
+        <div className="absolute left-1/2 -bottom-3.5 -translate-x-1/2 z-30 no-print">
+          <div className="w-7 h-7 rounded-full bg-blue-600 border-2 border-white text-white group-hover:bg-blue-500 flex items-center justify-center shadow-md transition-all">
             <ChevronDown 
-              size={14} 
+              size={16} 
               className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`} 
             />
           </div>
@@ -552,100 +679,105 @@ function CollapsibleHeader({ title, isOpen, onToggle, width = 'w-80' }) {
 }
 
 // --- MAIN ORGANIZATIONAL TREE ---
-function OrgTree({ node, onInspect }) {
+function OrgTree({ node, onInspect, searchQuery }) {
   const [showObd, setShowObd] = useState(true);
+
+  if (!node) return null;
 
   return (
     <div className="flex flex-col items-center">
       
       {/* Executive level */}
       <div className="flex flex-col items-center z-10 relative">
-        <LeafCard item={node.dir4} onInspect={onInspect} width="w-88" />
-        <VerticalLine height={32} />
-        <LeafCard item={node.dir3} onInspect={onInspect} width="w-88" />
+        <LeafCard item={node.dir4} onInspect={onInspect} searchQuery={searchQuery} />
+        <VerticalLine height={36} />
+        <LeafCard item={node.dir3} onInspect={onInspect} searchQuery={searchQuery} />
       </div>
 
       {/* OBD Side Branch */}
-      <div className="relative flex flex-col items-center w-full obd-print-spacer">
-        <div className="w-0.5 bg-slate-500 h-full absolute top-0 left-1/2 -translate-x-1/2 z-0 print-tree-connector" />
+      {node.obd && (
+        <div className="relative flex flex-col items-center w-full obd-print-spacer">
+          <div className="w-0.5 bg-slate-500 h-full absolute top-0 left-1/2 -translate-x-1/2 z-0 print-tree-connector" />
 
-        <div className="relative z-10 my-6 w-full flex justify-center items-start">
-          <div className="relative flex flex-col items-center">
-            <VerticalLine height={40} />
+          <div className="relative z-10 my-8 w-full flex justify-center items-start">
+            <div className="relative flex flex-col items-center">
+              <VerticalLine height={48} />
 
-            <div className="absolute top-[20px] left-1/2 w-[520px] h-[2px] bg-slate-500 z-0 pointer-events-none print-tree-connector-h" />
+              <div className="absolute top-[24px] left-1/2 w-[600px] h-[2.5px] bg-slate-500 z-0 pointer-events-none print-tree-connector-h" />
 
-            <div className="absolute top-0 left-[580px] -translate-x-1/2 flex flex-col items-center">
-              <CollapsibleHeader
-                title={node.obd.title}
-                isOpen={showObd}
-                onToggle={() => setShowObd(!showObd)}
-                width="w-88"
-              />
+              <div className="absolute top-0 left-[680px] -translate-x-1/2 flex flex-col items-center">
+                <CollapsibleHeader
+                  title={node.obd.title}
+                  isOpen={showObd}
+                  onToggle={() => setShowObd((prev) => !prev)}
+                />
 
-              <AnimatePresence>
-                {showObd && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.25, ease: 'easeInOut' }}
-                    className="flex flex-col items-center mt-3"
-                  >
-                    <VerticalLine height={16} dashed={true} />
+                <AnimatePresence>
+                  {showObd && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: 'easeInOut' }}
+                      className="flex flex-col items-center mt-4"
+                    >
+                      <VerticalLine height={20} dashed={true} />
 
-                    <div className="relative flex justify-center items-start gap-8 pt-4">
-                      <svg className="absolute top-0 left-0 w-full h-4 pointer-events-none z-0">
-                        <g stroke="#64748b" strokeWidth="2" strokeDasharray="4 4" fill="none">
-                          <line x1="16.6%" y1="0" x2="83.3%" y2="0" />
-                          <line x1="16.6%" y1="0" x2="16.6%" y2="16" />
-                          <line x1="50%" y1="0" x2="50%" y2="16" />
-                          <line x1="83.3%" y1="0" x2="83.3%" y2="16" />
-                        </g>
-                      </svg>
+                      <div className="relative flex justify-center items-start gap-10 pt-4">
+                        <svg className="absolute top-0 left-0 w-full h-4 pointer-events-none z-0">
+                          <g stroke="#64748b" strokeWidth="2.5" strokeDasharray="5 5" fill="none">
+                            <line x1="16.6%" y1="0" x2="83.3%" y2="0" />
+                            <line x1="16.6%" y1="0" x2="16.6%" y2="16" />
+                            <line x1="50%" y1="0" x2="50%" y2="16" />
+                            <line x1="83.3%" y1="0" x2="83.3%" y2="16" />
+                          </g>
+                        </svg>
 
-                      {node.obd.cols.map((col, cIdx) => (
-                        <div key={cIdx} className="flex flex-col items-center relative shrink-0">
-                          <div className="flex flex-col gap-3.5 relative z-10">
-                            {col.map((staff, sIdx) => (
-                              <React.Fragment key={sIdx}>
-                                <LeafCard item={staff} onInspect={onInspect} width="w-60" />
-                                {sIdx < col.length - 1 && (
-                                  <div className="flex justify-center -my-1.5">
-                                    <VerticalLine height={12} dashed={true} />
-                                  </div>
-                                )}
-                              </React.Fragment>
-                            ))}
+                        {node.obd.cols?.map((col, cIdx) => (
+                          <div key={cIdx} className="flex flex-col items-center relative shrink-0">
+                            <div className="flex flex-col gap-4 relative z-10">
+                              {col.map((staff, sIdx) => (
+                                <React.Fragment key={sIdx}>
+                                  <LeafCard item={staff} onInspect={onInspect} searchQuery={searchQuery} />
+                                  {sIdx < col.length - 1 && (
+                                    <div className="flex justify-center -my-2">
+                                      <VerticalLine height={16} dashed={true} />
+                                    </div>
+                                  )}
+                                </React.Fragment>
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div style={{ height: showObd ? '680px' : '80px' }} className="transition-all duration-300 w-full" />
-      </div>
+          <div style={{ height: showObd ? '780px' : '90px' }} className="transition-all duration-300 w-full" />
+        </div>
+      )}
 
       {/* Divisions Section */}
-      <TreeBranch count={node.divisions.length} gap={56}>
-        {node.divisions.map((div) => (
-          <div key={div.id} className="flex flex-col items-center flex-1 min-w-[560px]">
-            <DivisionBranch division={div} onInspect={onInspect} />
-          </div>
-        ))}
-      </TreeBranch>
+      {node.divisions && (
+        <TreeBranch count={node.divisions.length} gap={80}>
+          {node.divisions.map((div) => (
+            <div key={div.id} className="flex flex-col items-center flex-1 min-w-[940px]">
+              <DivisionBranch division={div} onInspect={onInspect} searchQuery={searchQuery} />
+            </div>
+          ))}
+        </TreeBranch>
+      )}
 
     </div>
   );
 }
 
 // --- DIVISION BRANCH ---
-function DivisionBranch({ division, onInspect }) {
+function DivisionBranch({ division, onInspect, searchQuery }) {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -653,8 +785,7 @@ function DivisionBranch({ division, onInspect }) {
       <CollapsibleHeader
         title={division.title}
         isOpen={isOpen}
-        onToggle={() => setIsOpen(!isOpen)}
-        width="w-[420px]"
+        onToggle={() => setIsOpen((prev) => !prev)}
       />
 
       <AnimatePresence>
@@ -670,20 +801,22 @@ function DivisionBranch({ division, onInspect }) {
               <div className="flex flex-col items-center relative">
                 {division.leads.map((lead, idx) => (
                   <React.Fragment key={idx}>
-                    <VerticalLine height={24} />
-                    <LeafCard item={lead} onInspect={onInspect} width="w-68" />
+                    <VerticalLine height={28} />
+                    <LeafCard item={lead} onInspect={onInspect} searchQuery={searchQuery} />
                   </React.Fragment>
                 ))}
               </div>
             )}
 
-            <TreeBranch count={division.sections.length} gap={36}>
-              {division.sections.map((sec) => (
-                <div key={sec.id} className="flex flex-col items-center flex-1 min-w-[260px]">
-                  <SectionBranch section={sec} onInspect={onInspect} />
-                </div>
-              ))}
-            </TreeBranch>
+            {division.sections && (
+              <TreeBranch count={division.sections.length} gap={60}>
+                {division.sections.map((sec) => (
+                  <div key={sec.id} className="flex flex-col items-center flex-1 min-w-[920px]">
+                    <SectionBranch section={sec} onInspect={onInspect} searchQuery={searchQuery} />
+                  </div>
+                ))}
+              </TreeBranch>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
@@ -691,8 +824,8 @@ function DivisionBranch({ division, onInspect }) {
   );
 }
 
-// --- SECTION BRANCH ---
-function SectionBranch({ section, onInspect }) {
+// --- SECTION BRANCH (PAIRS ALIGNED WITH 420px CARDS) ---
+function SectionBranch({ section, onInspect, searchQuery }) {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -700,8 +833,7 @@ function SectionBranch({ section, onInspect }) {
       <CollapsibleHeader
         title={section.title}
         isOpen={isOpen}
-        onToggle={() => setIsOpen(!isOpen)}
-        width="w-80"
+        onToggle={() => setIsOpen((prev) => !prev)}
       />
 
       <AnimatePresence>
@@ -713,29 +845,38 @@ function SectionBranch({ section, onInspect }) {
             transition={{ duration: 0.25, ease: 'easeInOut' }}
             className="flex flex-col items-center w-full"
           >
-            <VerticalLine height={24} />
+            <VerticalLine height={28} />
 
             {section.pairs && (
               <div className="flex flex-col items-center relative w-full">
+                {/* Center Stem Line */}
                 <div className="absolute top-0 bottom-4 left-1/2 -translate-x-1/2 w-0.5 bg-slate-500 z-0 print-tree-connector" />
 
-                <div className="flex flex-col gap-5 w-full items-center">
+                <div className="flex flex-col gap-6 w-full items-center">
                   {section.pairs.map((pair, idx) => (
-                    <div key={idx} className="flex items-center justify-center relative w-full gap-12 z-10">
-                      <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-2 pointer-events-none z-0">
-                        <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#64748b" strokeWidth="2" />
-                      </svg>
+                    <div key={idx} className="flex items-center justify-between relative w-[900px] shrink-0 z-10">
+                      {/* Horizontal Connector Line through middle */}
+                      <div className="absolute top-1/2 left-0 w-full h-[2.5px] -translate-y-1/2 bg-slate-500 z-0 pointer-events-none print-tree-connector-h" />
 
-                      <LeafCard item={pair[0]} onInspect={onInspect} width="w-52" />
-                      {pair[1] && <LeafCard item={pair[1]} onInspect={onInspect} width="w-52" />}
+                      <div className="z-10 bg-white/10 rounded-2xl">
+                        <LeafCard item={pair[0]} onInspect={onInspect} searchQuery={searchQuery} />
+                      </div>
+
+                      {pair[1] ? (
+                        <div className="z-10 bg-white/10 rounded-2xl">
+                          <LeafCard item={pair[1]} onInspect={onInspect} searchQuery={searchQuery} />
+                        </div>
+                      ) : (
+                        <div className="w-[420px] shrink-0 pointer-events-none" />
+                      )}
                     </div>
                   ))}
                 </div>
 
                 {section.bottomNode && (
                   <div className="flex flex-col items-center relative z-10">
-                    <VerticalLine height={24} />
-                    <LeafCard item={section.bottomNode} onInspect={onInspect} width="w-52" />
+                    <VerticalLine height={28} />
+                    <LeafCard item={section.bottomNode} onInspect={onInspect} searchQuery={searchQuery} />
                   </div>
                 )}
               </div>
@@ -745,9 +886,9 @@ function SectionBranch({ section, onInspect }) {
               <div className="flex flex-col items-center relative">
                 <div className="absolute top-0 bottom-4 left-1/2 -translate-x-1/2 w-0.5 bg-slate-500 z-0 print-tree-connector" />
                 
-                <div className="flex flex-col gap-4 relative z-10">
+                <div className="flex flex-col gap-5 relative z-10">
                   {section.stack.map((item, idx) => (
-                    <LeafCard key={idx} item={item} onInspect={onInspect} width="w-56" />
+                    <LeafCard key={idx} item={item} onInspect={onInspect} searchQuery={searchQuery} />
                   ))}
                 </div>
               </div>
@@ -759,9 +900,15 @@ function SectionBranch({ section, onInspect }) {
   );
 }
 
-// --- PROFILE DETAIL MODAL (ENLARGED AVATAR) ---
+// --- PROFILE DETAIL MODAL ---
 function DetailModal({ node, onClose }) {
-  const styles = CLASSIFICATION_STYLES[node.type] || CLASSIFICATION_STYLES.permanent;
+  if (!node) return null;
+
+  const isVacant = node.type === 'vacant' || node.vacant === true;
+  const styles = isVacant
+    ? (CLASSIFICATION_STYLES?.vacant || DEFAULT_VACANT_STYLE)
+    : (CLASSIFICATION_STYLES?.[node.type] || CLASSIFICATION_STYLES?.permanent || DEFAULT_VACANT_STYLE);
+
   const [copiedField, setCopiedField] = useState(null);
 
   const handleCopy = (text, fieldName, e) => {
@@ -781,84 +928,87 @@ function DetailModal({ node, onClose }) {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.95 }}
-        className="w-full max-w-xl bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden relative z-10 text-slate-800"
+        className="w-full max-w-2xl bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden relative z-10 text-slate-800"
       >
-        <div className={`h-3.5 w-full bg-gradient-to-r ${styles.accent || 'from-blue-600 to-indigo-700'}`} />
+        <div className={`h-4 w-full bg-gradient-to-r ${styles.accent || 'from-blue-600 to-indigo-700'}`} />
 
-        <div className="p-7 max-h-[85vh] overflow-y-auto">
+        <div className="p-8 max-h-[85vh] overflow-y-auto">
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 p-2.5 rounded-full bg-slate-100 text-slate-500 hover:text-slate-800 hover:bg-slate-200 transition-colors"
+            className="absolute top-6 right-6 p-2.5 rounded-full bg-slate-100 text-slate-500 hover:text-slate-800 hover:bg-slate-200 transition-colors"
           >
-            <X size={18} />
+            <X size={20} />
           </button>
 
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-            {/* Modal Image Enlarged to w-40 h-40 */}
             {node.image ? (
               <img
                 src={node.image}
                 alt={node.title}
-                className="w-40 h-40 rounded-2xl object-cover border-2 border-slate-200 shadow-md shrink-0"
+                className="w-48 h-48 rounded-2xl object-cover border-2 border-slate-200 shadow-md shrink-0"
               />
+            ) : isVacant ? (
+              <div className="w-48 h-48 rounded-2xl bg-slate-100 border-2 border-slate-300 flex items-center justify-center text-slate-400 shrink-0 shadow-xs">
+                <UserX size={64} />
+              </div>
             ) : (
-              <div className="w-40 h-40 rounded-2xl bg-blue-100 border-2 border-blue-300 flex items-center justify-center text-blue-900 font-black text-3xl shrink-0 shadow-xs">
+              <div className="w-48 h-48 rounded-2xl bg-blue-100 border-2 border-blue-300 flex items-center justify-center text-blue-900 font-black text-4xl shrink-0 shadow-xs">
                 {node.title ? node.title.substring(0, 3) : 'DSWD'}
               </div>
             )}
 
             <div className="text-center sm:text-left flex-1 pt-1">
-              {styles.label && (
-                <span className={`inline-block text-[10px] font-black uppercase tracking-wider px-3.5 py-1 rounded-full mb-2 shadow-xs ${styles.tagBg || 'bg-blue-600'} ${styles.tagText || 'text-white'}`}>
-                  {styles.label}
-                </span>
-              )}
-              <h2 className="text-2xl font-black text-slate-900 tracking-wide leading-tight">{node.title}</h2>
-              <p className="text-lg font-semibold text-slate-700 mt-1">{node.name || 'DSWD Academy Position'}</p>
+              <span className={`inline-block text-xs font-black uppercase tracking-wider px-4 py-1.5 rounded-full mb-3 shadow-xs ${styles.tagBg || 'bg-blue-600'} ${styles.tagText || 'text-white'}`}>
+                {isVacant ? 'VACANT POSITION' : (styles.label || styles.tag || 'STAFF')}
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-wide leading-tight">{node.title}</h2>
+              <p className={`text-xl font-black mt-2 ${isVacant ? 'text-slate-400 italic' : 'text-slate-900'}`}>
+                {isVacant ? 'Position Unassigned' : (node.name || 'DSWD Academy Staff')}
+              </p>
             </div>
           </div>
 
           <hr className="border-slate-200 my-6" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200">
-              <User size={18} className="text-blue-600 shrink-0" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+              <User size={20} className="text-blue-600 shrink-0" />
               <div className="truncate">
-                <span className="text-[10px] block text-slate-500 uppercase font-extrabold">Nickname</span>
-                <span className="font-bold text-slate-800 text-sm">{node.nickname || 'N/A'}</span>
+                <span className="text-xs block text-slate-500 uppercase font-black">Nickname</span>
+                <span className="font-extrabold text-slate-800 text-base">{node.nickname || 'N/A'}</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200">
-              <Briefcase size={18} className="text-emerald-600 shrink-0" />
+            <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+              <Briefcase size={20} className="text-emerald-600 shrink-0" />
               <div className="truncate">
-                <span className="text-[10px] block text-slate-500 uppercase font-extrabold">Profession</span>
-                <span className="font-bold text-slate-800 text-sm">{node.profession || 'Government Staff'}</span>
+                <span className="text-xs block text-slate-500 uppercase font-black">Profession</span>
+                <span className="font-extrabold text-slate-800 text-base">{node.profession || 'Government Staff'}</span>
               </div>
             </div>
 
             {/* CLICK-TO-COPY PHONE */}
             <div
               onClick={(e) => handleCopy(node.phone, 'phone', e)}
-              className="group flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-orange-50/80 border border-slate-200 hover:border-orange-300 cursor-pointer transition-all duration-200 relative"
+              className="group flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 hover:bg-orange-50/80 border border-slate-200 hover:border-orange-300 cursor-pointer transition-all duration-200 relative"
               title="Click to copy phone number"
             >
-              <div className="flex items-center gap-3 truncate pr-2">
-                <Phone size={18} className="text-orange-600 shrink-0" />
+              <div className="flex items-center gap-3.5 truncate pr-2">
+                <Phone size={20} className="text-orange-600 shrink-0" />
                 <div className="truncate">
-                  <span className="text-[10px] block text-slate-500 uppercase font-extrabold">Phone</span>
-                  <span className="font-bold text-slate-800 text-sm group-hover:text-orange-950 transition-colors">
+                  <span className="text-xs block text-slate-500 uppercase font-black">Phone</span>
+                  <span className="font-extrabold text-slate-800 text-base group-hover:text-orange-950 transition-colors">
                     {node.phone || 'Internal Ext.'}
                   </span>
                 </div>
               </div>
               <div className="shrink-0 flex items-center">
                 {copiedField === 'phone' ? (
-                  <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded-full">
-                    <Check size={12} /> Copied!
+                  <span className="inline-flex items-center gap-1 text-xs font-black text-emerald-600 bg-emerald-100 px-2.5 py-1 rounded-full">
+                    <Check size={14} /> Copied!
                   </span>
                 ) : (
-                  <Copy size={14} className="text-slate-400 group-hover:text-orange-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <Copy size={16} className="text-slate-400 group-hover:text-orange-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                 )}
               </div>
             </div>
@@ -866,25 +1016,25 @@ function DetailModal({ node, onClose }) {
             {/* CLICK-TO-COPY EMAIL */}
             <div
               onClick={(e) => handleCopy(node.email, 'email', e)}
-              className="group flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-sky-50/80 border border-slate-200 hover:border-sky-300 cursor-pointer transition-all duration-200 relative"
+              className="group flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 hover:bg-sky-50/80 border border-slate-200 hover:border-sky-300 cursor-pointer transition-all duration-200 relative"
               title="Click to copy email address"
             >
-              <div className="flex items-center gap-3 truncate pr-2">
-                <Mail size={18} className="text-sky-600 shrink-0" />
+              <div className="flex items-center gap-3.5 truncate pr-2">
+                <Mail size={20} className="text-sky-600 shrink-0" />
                 <div className="truncate">
-                  <span className="text-[10px] block text-slate-500 uppercase font-extrabold">Email</span>
-                  <span className="font-bold text-slate-800 text-sm group-hover:text-sky-950 transition-colors">
+                  <span className="text-xs block text-slate-500 uppercase font-black">Email</span>
+                  <span className="font-extrabold text-slate-800 text-base group-hover:text-sky-950 transition-colors">
                     {node.email || 'N/A'}
                   </span>
                 </div>
               </div>
               <div className="shrink-0 flex items-center">
                 {copiedField === 'email' ? (
-                  <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded-full">
-                    <Check size={12} /> Copied!
+                  <span className="inline-flex items-center gap-1 text-xs font-black text-emerald-600 bg-emerald-100 px-2.5 py-1 rounded-full">
+                    <Check size={14} /> Copied!
                   </span>
                 ) : (
-                  <Copy size={14} className="text-slate-400 group-hover:text-sky-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <Copy size={16} className="text-slate-400 group-hover:text-sky-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                 )}
               </div>
             </div>
@@ -892,13 +1042,13 @@ function DetailModal({ node, onClose }) {
 
           {node.tasks && node.tasks.length > 0 && (
             <div className="mt-6">
-              <span className="text-[10px] uppercase tracking-wider font-black text-slate-500 block mb-2.5">
+              <span className="text-xs uppercase tracking-wider font-black text-slate-500 block mb-3">
                 Core Duties & Functional Responsibilities ({node.tasks.length})
               </span>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2.5">
                 {node.tasks.map((task, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-xs font-semibold text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200">
-                    <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
+                  <div key={idx} className="flex items-center gap-3 text-sm font-bold text-slate-700 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                    <CheckCircle2 size={18} className="text-emerald-600 shrink-0" />
                     <span>{task}</span>
                   </div>
                 ))}

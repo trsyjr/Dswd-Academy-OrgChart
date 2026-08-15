@@ -81,6 +81,17 @@ export const CLASSIFICATION_STYLES = {
     nameText: 'text-slate-700 font-semibold',
     label: 'Contractual',
     tag: 'CONT'
+  },
+  vacant: {
+    bg: 'bg-slate-50/90 hover:bg-slate-100/90',
+    border: 'border-slate-300 hover:border-slate-400 shadow-slate-500/10',
+    tagBg: 'bg-slate-500',
+    tagText: 'text-white',
+    accent: 'from-slate-400 to-slate-500',
+    titleText: 'text-slate-700 font-black',
+    nameText: 'text-slate-500 font-semibold',
+    label: 'Vacant',
+    tag: 'VACANT'
   }
 };
 
@@ -252,11 +263,12 @@ export const orgData = {
         },
         {
           title: 'AVEO VI',
-          type: 'cos',
+          type: 'vacant',
           name: 'VACANT',
           nickname: 'N/A',
           image: null,
           phone: 'N/A',
+          email: 'N/A',
           profession: 'N/A',
           tasks: ['N/A']
         },
@@ -292,7 +304,7 @@ export const orgData = {
         },
         {
           title: 'TS IV',
-          type: 'permanent',
+          type: 'vacant',
           name: 'VACANT',
           nickname: 'N/A',
           image: null,
@@ -357,7 +369,7 @@ export const orgData = {
             [
               { 
                 title: 'ITO II', 
-                type: 'cos', 
+                type: 'vacant', 
                 name: 'VACANT', 
                 nickname: 'N/A', 
                 image: null,
@@ -381,7 +393,7 @@ export const orgData = {
             [
               { 
                 title: 'TS III', 
-                type: 'Permanent', 
+                type: 'permanent', 
                 name: 'Jane A. Baldino', 
                 nickname: 'Jane', 
                 image: JANE,
@@ -530,6 +542,7 @@ export const orgData = {
             image: null,
             email: 'jrbascon@dswd.gov.ph', 
             phone: 'N/A', 
+            profession: 'N/A',
             tasks: ['N/A'] }
         },
         {
@@ -567,7 +580,9 @@ export const orgData = {
                 name: 'N/A', 
                 nickname: 'N/A', 
                 image: null, 
+                email: 'N/A',
                 phone: 'N/A', 
+                profession: 'N/A',
                 tasks: ['N/A'] 
               },
               { 
@@ -632,11 +647,13 @@ export const orgData = {
             [
               { 
                 title: 'TS I', 
-                type: 'cos', 
+                type: 'vacant', 
                 name: 'VACANT', 
                 nickname: 'N/A', 
                 image: null, 
+                email: 'N/A',
                 phone: 'N/A', 
+                profession: 'N/A',
                 tasks: ['N/A'] 
               },
               { 
@@ -654,11 +671,13 @@ export const orgData = {
             [
               { 
                 title: 'TS I', 
-                type: 'cos', 
+                type: 'vacant', 
                 name: 'VACANT', 
                 nickname: 'N/A', 
                 image: null, 
+                email: 'N/A',
                 phone: 'N/A', 
+                profession: 'N/A',
                 tasks: ['N/A'] 
               },
               { 
@@ -713,10 +732,10 @@ export const orgData = {
               { 
                 title: 'TS IV', 
                 type: 'cos', 
-                name: 'Jesica S. Mencias', 
-                nickname: 'Jes', 
+                name: 'Carmina A. Llanto', 
+                nickname: 'Mina', 
                 image: null,
-                email: 'jsmencias@dswd.gov.ph', 
+                email: 'callanto@dswd.gov.ph', 
                 phone: 'N/A',
                 profession: 'N/A', 
                 tasks: ['N/A'] 
@@ -772,10 +791,10 @@ export const orgData = {
               { 
                 title: 'TS IV', 
                 type: 'cos', 
-                name: 'Carmina A. Llanto', 
-                nickname: 'Mina', 
+                name: 'Jesica S. Mencias', 
+                nickname: 'Jes', 
                 image: null, 
-                email: 'callanto@dswd.gov.ph',
+                email: 'jsmencias@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
@@ -785,10 +804,10 @@ export const orgData = {
               { 
                 title: 'TS III', 
                 type: 'cos', 
-                name: 'Ma. Erica Ruby F. Fernandez', 
-                nickname: 'Ruby', 
+                name: 'Merielle O. Palacio', 
+                nickname: 'Merl', 
                 image: null, 
-                email: 'merffernandez@dswd.gov.ph',
+                email: 'mopalacio@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
@@ -809,10 +828,10 @@ export const orgData = {
               { 
                 title: 'PDO III', 
                 type: 'cos', 
-                name: 'Tonghie R. Sy Jr.', 
-                nickname: 'CJ', 
+                name: 'Eddniel Patrick I. Papa', 
+                nickname: 'Edd', 
                 image: null, 
-                email: 'trsyjr@dswd.gov.ph',
+                email: 'epipapa@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'Web Developer',
                 tasks: ['N/A'] 
@@ -820,10 +839,10 @@ export const orgData = {
               { 
                 title: 'TS III', 
                 type: 'cos', 
-                name: 'Jovie D. Cabais', 
-                nickname: 'Jovie', 
+                name: 'Ma. Erica Ruby F. Fernandez', 
+                nickname: 'Ruby', 
                 image: null,
-                email: 'jdcabais@dswd.gov.ph', 
+                email: 'merffernandez@dswd.gov.ph', 
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
@@ -833,27 +852,14 @@ export const orgData = {
               { 
                 title: 'PDO III', 
                 type: 'cos', 
-                name: 'Eddniel Patrick I. Papa', 
-                nickname: 'Edd', 
+                name: 'Tonghie R. Sy Jr.', 
+                nickname: 'CJ', 
                 image: null, 
-                email: 'epipapa@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
+                email: 'trsyjr@dswd.gov.ph',
+                phone: '+63905979652', 
+                profession: 'Web Developer',
                 tasks: ['N/A'] 
               },
-              { 
-                title: 'TS III', 
-                type: 'cos', 
-                name: 'Merielle O. Palacio', 
-                nickname: 'Merl', 
-                image: null, 
-                email: 'mopalacio@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
-              }
-            ],
-            [
               { 
                 title: 'TS III', 
                 type: 'cos', 
@@ -864,7 +870,9 @@ export const orgData = {
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
-              },
+              }
+            ],
+            [
               { 
                 title: 'TS III', 
                 type: 'permanent', 
@@ -872,6 +880,17 @@ export const orgData = {
                 nickname: 'Nancy', 
                 image: null, 
                 email: 'nefortes@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS III', 
+                type: 'cos', 
+                name: 'Jovie D. Cabais', 
+                nickname: 'Jovie', 
+                image: null, 
+                email: 'jdcabais@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A']
@@ -890,12 +909,12 @@ export const orgData = {
                 tasks: ['N/A'] 
               },
               { 
-                title: 'TS II', 
+                title: 'TS III', 
                 type: 'contractual', 
-                name: 'Maria Clarissa D. Raquinel', 
-                nickname: 'Cla', 
+                name: 'Jena Mae C. Aguilar', 
+                nickname: 'Jena', 
                 image: null,
-                email: 'mcdraquinel@dswd.gov.ph', 
+                email: 'jmcaguilar@dswd.gov.ph', 
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
@@ -914,12 +933,36 @@ export const orgData = {
                 tasks: ['N/A'] 
               },
               { 
+                title: 'TS II', 
+                type: 'cos', 
+                name: 'Maria Clarissa D. Raquinel', 
+                nickname: 'Cla', 
+                image: null, 
+                email: 'mcdraquinel@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
+            ],
+            [
+              { 
                 title: 'TS III', 
                 type: 'cos', 
                 name: 'Nikkita Lyka Gracia L. Ermino', 
                 nickname: 'Lyka', 
                 image: null, 
                 email: 'nlglermino@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'TS II', 
+                type: 'cos', 
+                name: 'Mery Joy A. Campaña', 
+                nickname: 'Joy', 
+                image: null, 
+                email: 'mjacampana@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
@@ -930,34 +973,93 @@ export const orgData = {
                 title: 'TS III', 
                 type: 'cos', 
                 name: 'Jocelyn M. Edillo', 
-                nickname: 'Jo', 
-                image: null, 
-                email: 'jmedillo@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
+                nickname: 'Jo', image: null, 
+                email: 'jmedillo@dswd.gov.ph', 
+                phone: 'N/A', profession: 'N/A', 
                 tasks: ['N/A'] 
               },
               { 
                 title: 'PDO II', 
-                type: 'cos', 
-                name: 'VACANT', 
+                type: 'vacant', 
+                name: 'N/A', 
                 nickname: 'N/A', 
                 image: null, 
+                email: 'N/A', 
                 phone: 'N/A', 
+                profession: 'N/A', 
                 tasks: ['N/A'] 
               }
             ],
             [
-              { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'ISA I', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'SWO III', 
+                type: 'cos', 
+                name: 'Aljohn C. Purca', 
+                nickname: 'Aljohn', 
+                image: null, 
+                email: 'acpurca@dswd.gov.ph', 
+                phone: 'N/A', 
+                profession: 'N/A', 
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'ISA I', 
+                type: 'cos', 
+                name: 'Jexequiel Rodriguez', 
+                nickname: 'Jex', 
+                email: 'N/A', 
+                phone: 'N/A', 
+                profession: 'N/A', 
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'ADAS II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'SWO III', 
+                type: 'cos', 
+                name: 'Christian Nicole D. Dorado', 
+                nickname: 'Nic', 
+                image: null, 
+                email: 'cnddorado@dswd.gov.ph', 
+                phone: 'N/A', 
+                profession: 'N/A', 
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'ADAS II', 
+                type: 'cos', 
+                name: 'Jose Tiofisto M. Pacao', 
+                nickname: 'Jops', 
+                image: null, 
+                email: 'jtmpacao@dswd.gov.ph', 
+                phone: 'N/A', 
+                profession: 'N/A', 
+                tasks: ['N/A'] 
+              }
             ],
             [
-              { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-              { title: 'AAIDE VI', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+              { 
+                title: 'SWO III', 
+                type: 'cos', 
+                name: 'Noreen N. Data', 
+                nickname: 'Noreen', 
+                image: null, 
+                email: 'nndata@dswd.gov.ph', 
+                phone: 'N/A', 
+                profession: 'N/A', 
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'AAIDE VI', 
+                type: 'cos', 
+                name: 'Justine Kelly E. Diaz', 
+                nickname: 'Kelly', 
+                image: null, 
+                email: 'jkediaz@dswd.gov.ph', 
+                phone: 'N/A', 
+                profession: 'N/A', 
+                tasks: ['N/A'] 
+              }
             ]
           ]
         },
@@ -965,19 +1067,19 @@ export const orgData = {
           id: 'taaorss',
           title: 'TAAORSS Section',
           stack: [
-            { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'STAT III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'TS II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'AA II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+            { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'PDO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'PDO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'PDO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'STAT III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'PDO II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'TS II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'AA II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] }
           ]
         }
       ]
@@ -992,7 +1094,9 @@ export const orgData = {
           name: 'N/A',
           nickname: 'N/A',
           image: null,
+          email: 'N/A',
           phone: 'N/A',
+          profession: 'N/A',
           tasks: ['N/A']
         }
       ],
@@ -1001,25 +1105,25 @@ export const orgData = {
           id: 'acas',
           title: 'Assessment Certification & Accreditation Section',
           stack: [
-            { title: 'PDO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'TS III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'AO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+            { title: 'PDO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'PDO III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'TS III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'AO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] }
           ]
         },
         {
           id: 'aqas',
           title: 'Accreditation & Quality Assurance Section',
           stack: [
-            { title: 'PDO V', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] },
-            { title: 'AO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, phone: 'N/A', tasks: ['N/A'] }
+            { title: 'PDO V', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'PDO III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'SWO III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'PDO II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
+            { title: 'AO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] }
           ]
         }
       ]
