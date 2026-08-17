@@ -1067,19 +1067,149 @@ export const orgData = {
           id: 'taaorss',
           title: 'TAAORSS Section',
           stack: [
-            { title: 'TS III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'STAT III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'TS II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'AA II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] }
+            { 
+              title: 'TS III', 
+              type: 'cos', 
+              name: 'Gloria G. Alvarado', 
+              nickname: 'Glo', 
+              image: null, 
+              email: 'ggalvarado@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'PDO IV', 
+              type: 'cos', 
+              name: 'Mary Ann S. Evangelista', 
+              nickname: 'MAAN', 
+              image: null, 
+              email: 'masevangelista@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'PDO III', 
+              type: 'cos', 
+              name: 'Kathleene Jhoy L. Lesaca', 
+              nickname: 'Kath', 
+              image: null, 
+              email: 'kjllesaca@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'SWO III', 
+              type: 'cos', 
+              name: 'Hardawy A. Baraocor', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'habaraocor@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'SWO III', 
+              type: 'cos', 
+              name: 'Jessa C. Ella', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'N/A', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'SWO III', 
+              type: 'cos', 
+              name: 'Glenda Fulong', 
+              nickname: 'Glenda', 
+              image: null, 
+              email: 'gfulong@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'SWO III', 
+              type: 'vacant', 
+              name: 'N/A', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'N/A', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'SWO III', 
+              type: 'vacant', 
+              name: 'N/A', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'N/A', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'PDO III', 
+              type: 'cos', 
+              name: 'Gelves C. Almiñe', 
+              nickname: 'Gelves', 
+              image: null, 
+              email: 'gcalmine@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'STAT III', 
+              type: 'cos', 
+              name: 'Christian B. Baylosis', 
+              nickname: 'Sky', 
+              image: null, 
+              email: 'cbbaylosis@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'PDO II', 
+              type: 'vacant', 
+              name: 'N/A', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'N/A', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'TS II', 
+              type: 'permanent', 
+              name: 'Maria Annele B Tio', 
+              nickname: 'Chin', 
+              image: null, 
+              email: 'mabtio@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A']
+            },
+            { 
+              title: 'AA II', 
+              type: 'cos', 
+              name: 'Hannah Ysabelle R. Aguilar', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'hyraguilar@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            }
           ]
         }
       ]
@@ -1091,10 +1221,10 @@ export const orgData = {
         {
           title: 'TS IV - OIC',
           type: 'cos',
-          name: 'N/A',
-          nickname: 'N/A',
+          name: 'Norilix M. Razalan',
+          nickname: 'Nori',
           image: null,
-          email: 'N/A',
+          email: 'nmrazalan@dswd.gov.ph',
           phone: 'N/A',
           profession: 'N/A',
           tasks: ['N/A']
@@ -1105,25 +1235,155 @@ export const orgData = {
           id: 'acas',
           title: 'Assessment Certification & Accreditation Section',
           stack: [
-            { title: 'PDO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'TS III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'AO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] }
+            { 
+              title: 'PDO IV', 
+              type: 'cos', 
+              name: 'Clifford Robin C. Gabatin', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'crcgabatin@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'PDO III', 
+              type: 'permanent', 
+              name: 'Analiza S. Ileto', 
+              nickname: 'Ana', 
+              image: null, 
+              email: 'asileto@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'TS III', 
+              type: 'cos', 
+              name: 'Kirsten Patrice E. Maglalang', 
+              nickname: 'Ten', 
+              image: null, 
+              email: 'kpemaglalang@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'SWO III', 
+              type: 'cos', 
+              name: 'Glyza Mae D. Ascrate', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'gmdascrate@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'SWO III', 
+              type: 'cos', 
+              name: 'Juhaifa M. Imam', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'jmimam@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'SWO III', 
+              type: 'cos', 
+              name: 'N/A', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'N/A', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'AO IV', 
+              type: 'vacant', 
+              name: 'N/A', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'N/A', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            }
           ]
         },
         {
           id: 'aqas',
           title: 'Accreditation & Quality Assurance Section',
           stack: [
-            { title: 'PDO V', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'permanent', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'SWO III', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'PDO II', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] },
-            { title: 'AO IV', type: 'cos', name: 'N/A', nickname: 'N/A', image: null, email: 'N/A', phone: 'N/A', profession: 'N/A', tasks: ['N/A'] }
+            { 
+              title: 'PDO V', 
+              type: 'cos', 
+              name: 'Rosylyn Arnigo', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'rmarnigo@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'PDO III', 
+              type: 'cos', 
+              name: 'Richelle Fem A. Juan', 
+              nickname: 'Fem', 
+              image: null, 
+              email: 'rfajuan@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'SWO III', 
+              type: 'permanent', 
+              name: 'Abigail Joyce S. Barrera', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'ajsbarrera@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'SWO III', 
+              type: 'vacant', 
+              name: 'N/A', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'N/A', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'PDO II', 
+              type: 'cos', 
+              name: 'Justice John T. Banzuela', 
+              nickname: 'N/A', 
+              image: null, 
+              email: 'jjtbanzuela@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            },
+            { 
+              title: 'AO IV', 
+              type: 'permanent', 
+              name: 'Charito S. Carambas', 
+              nickname: 'Cha', 
+              image: null, 
+              email: 'cscarambas@dswd.gov.ph', 
+              phone: 'N/A', 
+              profession: 'N/A', 
+              tasks: ['N/A'] 
+            }
           ]
         }
       ]
