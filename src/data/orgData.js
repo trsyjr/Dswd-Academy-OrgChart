@@ -129,45 +129,66 @@ export const orgData = {
           title: 'ADAS III',
           type: 'permanent',
           name: 'Mary Abegail J. Fandagani',
-          nickname: 'N/A',
+          nickname: 'Abby',
           image: ABBY,
-          phone: 'N/A',
+          phone: '+639173088574',
           email: 'majfandagani@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'Admin',
+          tasks: 
+          [
+            '1. Tracking incoming documents and route to concern division/ staff',
+            '2. Manage Paspas WF of the Assistant Bureau Director', 
+            '3. Alternate focal of HR and Property Management'
+          ]
         },
         {
           title: 'ADAS I',
           type: 'permanent',
           name: 'Rosalie R. Lee',
-          nickname: 'N/A',
+          nickname: 'Leah',
           image: LEA,
-          phone: 'N/A',
+          phone: '+639396763994',
           email: 'rrlee@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'Procurement and Property & Supplies',
+          tasks: 
+          [
+            '1. Preparation of  PRs',
+            '2. Market Scoping, Contacting Suppliers for Request for Quotations',
+            '3. Coordination with Procurement Division for Procured Items/POs/Evaluation of Quotations.',
+            '4. Coordination With Budget Divisions & Accounting Divisions for funding of PO, & AOQs',
+            '5. Coordination with BGMD, ICTMS & DMS for Technical Specifications'
+          ]
         },
         {
           title: 'ADAS I',
           type: 'permanent',
           name: 'Divie D. Medina',
-          nickname: 'N/A',
+          nickname: 'Dheyv',
           image: DIVIE,
-          phone: 'N/A',
+          phone: '+639179448936',
           email: 'ddmedina@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'Administrative Assistant I',
+          tasks: 
+          [
+            '1. DSWD Academy Email Manager',
+            '2. Procurement Assistant',
+            '3. Focal ship on Wellness and 7s'
+          ]
         },
         {
           title: 'PDO V',
           type: 'cos',
           name: 'Rogelio Tomas L. Gutierrez',
-          nickname: 'N/A',
+          nickname: 'Roger',
           image: ROGER,
-          phone: 'N/A',
+          phone: '+639687473672',
           email: 'rtlgutierrez@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'Social Worker',
+          tasks: 
+          [
+            '1. Special projects of BD',
+            '2. Manage OBD with ABD'
+          ]
         },
         {
           title: 'AO IV',
@@ -186,45 +207,74 @@ export const orgData = {
           title: 'AO IV',
           type: 'cos',
           name: 'Mayzel C. Guerrero',
-          nickname: 'N/A',
+          nickname: 'Maze',
           image: MAYZEL,
-          phone: 'N/A',
+          phone: '+639156401676',
           email: 'mcguerrero@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'FINANCIAL ANALYST',
+          tasks: 
+          [
+            '1. Accounting', 
+            '2. Budgeting and Procurement'
+          ]
         },
         {
           title: 'PLO II',
           type: 'permanent',
           name: 'Gercy C. Virtucio',
-          nickname: 'N/A',
+          nickname: 'Gerz',
           image: GERCY,
-          phone: 'N/A',
+          phone: '+639983826318',
           email: 'gvirtucio@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'Planning Officer',
+          tasks: 
+          [
+            '1. Strategy Performance Management',
+            '2. Planning and Budget Coordination',
+            '3. Policy Review and Development',
+            '4. Organizational Development',
+            '5. HPMES Implementation',
+            '6. Monitoring and Evaluation Coordination',
+            '7. Permanent Grievance Focal',
+            '8. Alternate GAD Focal',
+            '9. Permanent LGBTQIA+ Focal'
+          ]
         },
         {
           title: 'AO V',
           type: 'permanent',
           name: 'Ruby Anna R. Tolentino',
-          nickname: 'N/A',
+          nickname: 'RA',
           image: null,
-          phone: 'N/A',
+          phone: '+639217368804',
           email: 'rartolentino@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'Financial Analyst',
+          tasks: 
+          [
+            '1. Manage the financial related transactions such as utilization of the DSWD Academy',
+            '2. Prepares Budget Proposal and Work and Financial Plan of the DSWD Academy',
+            '3. Prepares financial report',
+            '4. Coordinate to the Regional Focal regarding financial utilization'
+          ]
         },
         {
           title: 'AO IV',
           type: 'cos',
           name: 'Rosario G. Mayrina',
-          nickname: 'N/A',
+          nickname: 'Flor',
           image: FLOR,
-          phone: 'N/A',
+          phone: '+639772990161',
           email: 'rgmayrina@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'HR Specialist',
+          tasks: 
+          [
+            '1.	Provides administrative and technical support to the Bureau Director',
+            '2. Facilitate the hiring processes of the Bureau',
+            '3. Facilitate processing of personnel requirements of the Bureau',
+            '4. Administer HR-related concerns among permanent and COS staff, such as applications for leave, CDOs and DTR, among others',
+            '5. Prepares memoranda and other related documentary requirements; and',
+            '6. Other related tasks that may be assigned from time to time.'
+          ]
         }
       ],
       [
@@ -232,12 +282,16 @@ export const orgData = {
           title: 'ADAS V',
           type: 'cos',
           name: 'Rhency P. Chua',
-          nickname: 'N/A',
+          nickname: 'Rhens',
           image: RHENCY,
-          phone: 'N/A',
+          phone: '+639672688052',
           email: 'rpchua@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'Administrative Assistant',
+          tasks: 
+          [
+            '1. Records and Documents Management',
+            '2. Email Management'
+          ]
         },
         {
           title: 'AA I',
@@ -245,10 +299,15 @@ export const orgData = {
           name: 'Harold M. Aguilar',
           nickname: 'N/A',
           image: HAROLD,
-          phone: 'N/A',
+          phone: '+639959042347',
           email: 'hmaguilar@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'Admin',
+          tasks: 
+          [
+            '1. ATRO Focal', 
+            '2. SO and Authrority to Travel Focal', 
+            '3. CSC/Non CSC and 8888 Focal'
+          ]
         },
         {
           title: 'AAIDE VI',
@@ -256,10 +315,14 @@ export const orgData = {
           name: 'Editha S Uriarte',
           nickname: 'N/A',
           image: DADA,
-          phone: 'N/A',
+          phone: '+639150978114',
           email: 'esuriarte@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'ADMIN STAFF-GOVT EMPLOYEE',
+          tasks: 
+          [
+            '1. Outgoing Documents',
+            '2. RMO focal'
+          ]
         },
         {
           title: 'AVEO VI',
@@ -276,12 +339,16 @@ export const orgData = {
           title: 'ADAS III',
           type: 'cos',
           name: 'Loisse Nadine Q. Madrid',
-          nickname: 'Nadine',
+          nickname: 'Nads',
           image: NADINE,
-          phone: 'N/A',
+          phone: '+639197242508',
           email: 'lnqmadrid@dswd.gov.ph',
-          profession: 'N/A',
-          tasks: ['N/A']
+          profession: 'ADMINISTRATIVE ASSISTANT',
+          tasks: 
+          [
+            '1. Provides administrative support',
+            '2. Performs secretariat functions'
+          ]
         }
       ]
     ]
@@ -334,12 +401,19 @@ export const orgData = {
               { title: 'AO IV',
                 type: 'cos',
                 name: 'Iana Sherrence O. Rivera',
-                nickname: 'IANA',
+                nickname: 'Yana',
                 image: null,
                 email: 'isorivera@dswd.gov.ph',
-                phone: 'N/A',
-                profession: 'N/A',
-                tasks: ['N/A']
+                phone: '+639512377586',
+                profession: 'Psychometrician',
+                tasks: 
+                [
+                  '1. Provide Technical Assistance in finalizing knowledge products submitted to the DSWD Academy',
+                  '2. Designing computer-based, web-based, or multimedia-based layouts, graphics, animation, video, sound, and/or content for use in the presentation on KM. e.g. video productions, website, CDs, DVDs, promotional materials, and other electronic media',
+                  '3. Assist in the management of the DSWD Core Group of Specialists',
+                  '4. Identify and/or develop contents to be uploaded to the KM Portal such as announcements, feature stories, success stories, etc.',
+                  '5. Provide support in the implementation of activities for the different knowledge sharing and collaboration mechanisms including the learning facilities managed by the Division/Bureau'
+                ]
               }
             ],
             [
@@ -350,9 +424,13 @@ export const orgData = {
                 nickname: 'Alma', 
                 image: ALMA, 
                 email: 'amdavid@dswd.gov.ph',
-                phone: 'N/A',
-                profession: 'N/A',
-                tasks: ['N/A']
+                phone: '+639759128120',
+                profession: 'Social worker',
+                tasks: 
+                [
+                  '1. Develop instructional design  and modules/ manuals',
+                  '2. TA to OBS and partner agencies in module and instructional design development'
+                ]
               },
               { 
                 title: 'TS III', 
@@ -395,16 +473,20 @@ export const orgData = {
                 title: 'TS III', 
                 type: 'permanent', 
                 name: 'Jane A. Baldino', 
-                nickname: 'Jane', 
+                nickname: 'Jena', 
                 image: JANE,
                 email: 'jabaldino@dswd.gov.ph', 
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639482758405', 
+                profession: 'Social Worker',
+                tasks: 
+                [
+                  '1. KM Writer',
+                  '2. CGS Focal, etc.'
+                ] 
               },
               { 
                 title: 'TS III', 
-                type: 'cos', 
+                type: 'contractual', 
                 name: 'Jessica Inah C. Pangan', 
                 nickname: 'Inah', 
                 image: INAH,
@@ -428,14 +510,21 @@ export const orgData = {
               },
               { 
                 title: 'TS II', 
-                type: 'cos', 
-                name: 'N/A', 
-                nickname: 'N/A', 
+                type: 'contractual', 
+                name: 'Jennifer B. Gavarra', 
+                nickname: 'Jing', 
                 image: null, 
-                email: '',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                email: 'jbgavarra@dswd.gov.ph',
+                phone: '+639190031370', 
+                profession: 'Licensed Professional Teacher',
+                tasks: 
+                [
+                  "1. Design and develop learning modules",
+                  "2. Maintain learning modules registry and good practice documentation inventory",
+                  "3. Monitor progress and completion on the 4Ps 101 e-learning course",
+                  "4. Provide technical assistance on knowledge management (KM) related concerns",
+                  "5. Support or lead KM-related activities by acting as learning management team"
+                ]
               }
             ],
             [
@@ -481,9 +570,13 @@ export const orgData = {
                 nickname: 'Tere', 
                 image: TERE, 
                 email: 'mtmreyes@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639171174711', 
+                profession: 'LPT',
+                tasks: 
+                [
+                  '1. Module Developer',
+                  '2. Learning Management Team'
+                ] 
               }
             ],
             [
@@ -494,9 +587,17 @@ export const orgData = {
                 nickname: 'Dale', 
                 image: DALE, 
                 email: 'amdeluna@dswd.gov.ph',
-                phone: 'N/A',
-                profession: 'N/A', 
-                tasks: ['N/A'] 
+                phone: '+639997294757',
+                profession: 'Licensed Teacher', 
+                tasks: 
+                [
+                  '1. KM Writer',
+                  '2. Conduct reviews and packaging of knowledge products, knowledge sharing sessions, good practice documentations, and intellectual property (IP) concerns',
+                  '3. Process requests provision of resource persons and support to the mobilization of CGS pool of experts',
+                  '4. Provide technical assistance on KM systems, mechanisms and intellectual property',
+                  '5. Support to module development activities; and',
+                  '6. Other tasks performed as instructed.'
+                ] 
               },
               { 
                 title: 'SWO III', 
@@ -718,9 +819,12 @@ export const orgData = {
           nickname: 'Joesa',
           image: DC,
           email: 'ejsconsulta@dswd.gov.ph',
-          phone: 'N/A',
-          profession: 'N/A',
-          tasks: ['N/A']
+          phone: '+639219718858',
+          profession: 'REGISTERED SOCIAL WORKER',
+          tasks: 
+          [
+            'Overall in charge as Chief of the Capability Building Division (CBD) with Professional Learning and Development Section (PLDS) and TAAORSS Section.'
+          ]
         }
       ],
       sections: [
@@ -736,9 +840,17 @@ export const orgData = {
                 nickname: 'Mina', 
                 image: null,
                 email: 'callanto@dswd.gov.ph', 
-                phone: 'N/A',
-                profession: 'N/A', 
-                tasks: ['N/A'] 
+                phone: '+639395082713',
+                profession: 'Teacher', 
+                tasks: 
+                [
+                  '1. CapBuild Technical Assistance Focal; Social Protection Focal (Alt. Focal);',
+                  '2. Training on Camp Coordination and Camp Management Focal (2026);',
+                  '3. Training on Women Friendly Space Management (2026);',
+                  '4. CapBuild Lab Trainings Focal;',
+                  '5. Communications Officer (Ad Hoc);',
+                  '6. Onboarding Team Lead (Ad Hoc)'
+                ] 
               },
               { 
                 title: 'PDO II', 
@@ -747,9 +859,17 @@ export const orgData = {
                 nickname: 'LJ', 
                 image: null,
                 email: 'ljrfrancisco@dswd.gov.ph', 
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639453518623', 
+                profession: 'Teacher',
+                tasks: 
+                [
+                  '1. Learning Management Team',
+                  '2. Technical Assistance',
+                  '3. Records Management and Documentation Control',
+                  '4. Documentation and Reporting',
+                  '5. Financial Management'
+
+                ] 
               }
             ],
             [
@@ -760,20 +880,29 @@ export const orgData = {
                 nickname: 'Pao', 
                 image: null, 
                 email: 'jpmleyva@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639776590548', 
+                profession: 'Training Facilitator',
+                tasks: 
+                [
+                  'PLACEHOLDER FOR INITIAL SUBMISSION'
+                ] 
               },
               { 
                 title: 'TS II', 
                 type: 'permanent', 
                 name: 'Orchid S. Bibit', 
-                nickname: 'Ms. O', 
+                nickname: 'Orchid', 
                 image: null, 
                 email: 'osbibit@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639688793539', 
+                profession: 'Guidance Associate / Teacher',
+                tasks: 
+                [
+                  '1. Learning Management Team',
+                  '2. Coordinates the capability-building programs and projects of the Academy',
+                  '3. Co-facilitates pre-, actual-, and post-conduct capability-building activities',
+                  '4. Performs other tasks as may be required by the Division Chief/Section Head.'
+                ] 
               }
             ],
             [
@@ -795,9 +924,15 @@ export const orgData = {
                 nickname: 'Jes', 
                 image: null, 
                 email: 'jsmencias@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639561442796', 
+                profession: 'Psychometrician',
+                tasks: 
+                [
+                  '1. Learning and Development (L&D) Management',
+                  '2. Technical Support',
+                  '3. Learning Delivery',
+                  '4. Staff Supervision and Development'
+                ] 
               }
             ],
             [
@@ -819,9 +954,12 @@ export const orgData = {
                 nickname: 'Meann', 
                 image: null, 
                 email: 'matdealo@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639175359936', 
+                profession: 'Nurse',
+                tasks: 
+                [
+                  'Learning Management Team'
+                ] 
               }
             ],
             [
@@ -832,9 +970,20 @@ export const orgData = {
                 nickname: 'Edd', 
                 image: null, 
                 email: 'epipapa@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'Web Developer',
-                tasks: ['N/A'] 
+                phone: '+639703505489', 
+                profession: 'Sociologist',
+                tasks: 
+                [
+                  '1. Responsible for performing overall capability-building roles and functions',
+                  '2. Undertakes the conceptualization of capability building programs including course designs, curriculum development, research, and assessment of competency requirement',
+                  '3. Coordinates the capability building programs and projects of the Division/Bureau',
+                  '4. Prepares, reviews and enhances training proposal/training design',
+                  '5. Manages/facilitates actual conduct of capability building activities',
+                  '6. Conducts training evaluation and prepares necessary reports',
+                  '7. Develops and enhances training manuals/modules',
+                  '8. Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.; and',
+                  '9. Performs other tasks as may be required by the Chief and/or the Director.'
+                ] 
               },
               { 
                 title: 'TS III', 
@@ -843,9 +992,20 @@ export const orgData = {
                 nickname: 'Ruby', 
                 image: null,
                 email: 'merffernandez@dswd.gov.ph', 
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639664703781', 
+                profession: 'Professional Teacher',
+                tasks: 
+                [
+                  '1. Responsible for performing overall capability-building roles and functions',
+                  '2. Undertakes the conceptualization of capability-building programs including course designs, curriculum development, research, and assessment of the competency requirement',
+                  '3. Coordinates the capability building programs and projects of the Division/Bureau',
+                  '4. Prepares, reviews and enhances training proposal/training design',
+                  '5. Manages/facilitates actual conduct of capability building activities',
+                  '6. Conducts training evaluation and prepares necessary reports',
+                  '7. Develops and enhances training manuals/modules',
+                  '8. Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc; and',
+                  '9. Performs other tasks as may be required by the Chief and/or the Director.'
+                ] 
               }
             ],
             [
@@ -864,12 +1024,12 @@ export const orgData = {
                 title: 'TS III', 
                 type: 'cos', 
                 name: 'Kent B. Gaspar', 
-                nickname: 'Kent', 
+                nickname: 'Kentchie', 
                 image: null, 
                 email: 'kbgaspar@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639669328597', 
+                profession: 'IT Support Specialist',
+                tasks: ['Learning Management Team'] 
               }
             ],
             [
@@ -880,9 +1040,34 @@ export const orgData = {
                 nickname: 'Nancy', 
                 image: null, 
                 email: 'nefortes@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639498459722', 
+                profession: 'SOCIAL WORKER',
+                tasks: 
+                [
+                  "1. Conduct competency and learning needs assessments.",
+                  "2. Analyze organizational, functional, and individual training requirements.",
+                  "3. Recommend appropriate learning and development interventions.",
+                  "4. Design competency-based training programs, curricula, modules, and learning materials.",
+                  "5. Develop session guides, facilitator's manuals, participant handbooks, and assessment tools.",
+                  "6. Integrate adult learning principles and innovative instructional methodologies into program design.",
+                  "7. Serve as resource person, facilitator, moderator, or learning manager during training programs.",
+                  "8. Apply participatory, learner-centered, and experiential learning approaches.",
+                  "9. Manage classroom and virtual learning environments effectively.",
+                  "10. Plan, organize, and coordinate training schedules, logistics, and participant management.",
+                  "11. Collaborate with subject matter experts, partner agencies, and stakeholders.",
+                  "12. Ensure smooth implementation of learning activities.",
+                  "13. Monitor training implementation and participant progress.",
+                  "14. Evaluate learning outcomes using appropriate assessment methodologies.",
+                  "15. Prepare post-training evaluation reports and recommend program improvements.",
+                  "16. Provide technical assistance, coaching, and mentoring to field offices and partner institutions.",
+                  "17. Support the implementation of competency-based learning systems.",
+                  "18. Assist in developing standards, guidelines, and operational procedures.",
+                  "19. Coordinate with government agencies, academic institutions, professional organizations, and development partners.",
+                  "20. Participate in technical working groups and collaborative learning initiatives.",
+                  "21. Prepare technical reports, work plans, budget proposals, and accomplishment reports.",
+                  "22. Ensure compliance with organizational policies, procurement requirements, and quality standards.",
+                  "23. Perform other related functions as may be assigned by management."
+                ]
               },
               { 
                 title: 'TS III', 
@@ -928,9 +1113,13 @@ export const orgData = {
                 nickname: 'Kleng', 
                 image: null, 
                 email: 'kmeflores@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639195918026', 
+                profession: 'Social Worker',
+                tasks: 
+                [
+                  '1. Learning Management Team', 
+                  '2. Review Activity Proposals from OBSUs'
+                ] 
               },
               { 
                 title: 'TS II', 
@@ -952,9 +1141,20 @@ export const orgData = {
                 nickname: 'Lyka', 
                 image: null, 
                 email: 'nlglermino@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639566589841', 
+                profession: 'SOCIAL WORKER',
+                tasks: 
+                [
+                  "1. Responsible for performing overall capability-building roles and functions;",
+                  "2. Undertakes the conceptualization of capability building programs including course designs, curriculum development, research, and assessment of competency requirement;",
+                  "3. Coordinates the capability building programs and projects of the Division/Bureau;",
+                  "4. Prepares, reviews and enhances training proposal/training design;",
+                  "5. Manages/facilitates actual conduct of capability building activities;",
+                  "6. Conducts training evaluation and prepares necessary reports;",
+                  "7. Develops and enhances training manuals/modules;",
+                  "8. Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.; and",
+                  "9. Performs other tasks as may be required by the Chief and/or the Director."
+                ]
               },
               { 
                 title: 'TS II', 
@@ -973,10 +1173,23 @@ export const orgData = {
                 title: 'TS III', 
                 type: 'cos', 
                 name: 'Jocelyn M. Edillo', 
-                nickname: 'Jo', image: null, 
+                nickname: 'Jo',
+                image: null, 
                 email: 'jmedillo@dswd.gov.ph', 
-                phone: 'N/A', profession: 'N/A', 
-                tasks: ['N/A'] 
+                phone: '+639152895059', 
+                profession: 'Professional Teacher', 
+                tasks: 
+                [
+                  "1. Responsible for performing overall capability-building roles and functions;",
+                  "2. Undertakes the conceptualization of capability-building programs.",
+                  "3. Coordinates the capability-building programs and projects of the Division/Bureau;",
+                  "4. Prepares, reviews, and enhances training proposals/training design;",
+                  "5. Manages/facilitates actual conduct of capability-building activities;",
+                  "6. Conducts training evaluation and prepares necessary reports;",
+                  "7. Develops and enhances training manuals/modules;",
+                  "8. Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.; and",
+                  "9. Performs other tasks as may be required by the Chief and/or the Director."
+                ] 
               },
               { 
                 title: 'PDO II', 
@@ -1021,9 +1234,20 @@ export const orgData = {
                 nickname: 'Nic', 
                 image: null, 
                 email: 'cnddorado@dswd.gov.ph', 
-                phone: 'N/A', 
-                profession: 'N/A', 
-                tasks: ['N/A'] 
+                phone: '+639298988599', 
+                profession: 'Social Worker', 
+                tasks: 
+                [
+                  "1. Develop Learning Needs Assessment (LNA) methodologies and approaches aligned with Social Work Practice Competency Standards as a basis for developing Learning and Development (L&D) programs;",
+                  "2. Prepare L&D plans and training designs and activity proposals;",
+                  "3. Implements and manages approved L&D interventions, covering the end-to-end process of planning, delivery, monitoring, evaluation, and documentation of training programs and services;",
+                  "4. Work closely with the CPD Program focal person to plan, monitor, and report on regulatory requirements;",
+                  "5. Provides technical assistance (TA) to DSWD Central Office, Field Offices, and external partners in the planning, development, design, implementation, and documentation of Learning and Development Interventions (LDIs);",
+                  "6. Provides TA to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.;",
+                  "7. Coordinates the capability building programs and projects of the Division/Bureau;",
+                  "8. Conducts training evaluation and prepares necessary reports; and",
+                  "9. Perform other functions as may be assigned by the immediate supervisor and/or the Director in support of the Academy operation."
+                ] 
               },
               { 
                 title: 'ADAS II', 
@@ -1045,9 +1269,14 @@ export const orgData = {
                 nickname: 'Noreen', 
                 image: null, 
                 email: 'nndata@dswd.gov.ph', 
-                phone: 'N/A', 
-                profession: 'N/A', 
-                tasks: ['N/A'] 
+                phone: '+639993906707', 
+                profession: 'Social Worker', 
+                tasks:
+                [
+                  "1. Lead/ co-lead the conceptualization and design of training and capability-building programs, session plans, and instructional materials.",
+                  "2. Provides technical assistance to offices, bureaus, services, and field offices in training design, institutional development, and preparation of capability-building reports.",
+                  "3. Serves as a lead facilitator, co-facilitator, or resource person on relevant training topics and capacity-building activities."
+                ] 
               },
               { 
                 title: 'AAIDE VI', 
@@ -1162,9 +1391,13 @@ export const orgData = {
               nickname: 'Gelves', 
               image: null, 
               email: 'gcalmine@dswd.gov.ph', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              phone: '+639669624152', 
+              profession: 'Industrial Engineer', 
+              tasks: 
+              [
+                '1. Lead for the annual conduct of consultation workshop with the LSWDOs',
+                '2. TAAORSS Cluster Focal Person for Luzon A'
+              ] 
             },
             { 
               title: 'STAT III', 
@@ -1173,9 +1406,18 @@ export const orgData = {
               nickname: 'Sky', 
               image: null, 
               email: 'cbbaylosis@dswd.gov.ph', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              phone: '+639994068313', 
+              profession: 'Statistician / Licensed Professional Teacher', 
+              tasks: 
+              [
+                "1. Lead the Field Offices in the conduct of assessment of LGU Capacity through LSWDOs using assessment and analysis tool.",
+                "2. Facilitate the development and assessment, monitoring, and evaluation tools to assess LGU Capacities.",
+                "3. Manage the Implementation of Service Delivery Capacity Assessment Information System and assist in the enhancement of the information system.",
+                "4. Manage the Divisions Technical Assistance (TA) Database, SDCA, Staff Complement (RSW), and Magna Carta for RSW Databases.",
+                "5. Prepare HPMES Report (monthly, quarterly, semestral and annual) both GAA and OPC statistical narrative accomolishment and other reports required by other stakehholders.",
+                "6. Recommends systems, processes and guidelines that will improve the program operation.",
+                "7. Performs other task as may be required by the Bureau Director and or Division Chiefs."
+              ] 
             },
             { 
               title: 'PDO II', 
@@ -1191,13 +1433,17 @@ export const orgData = {
             { 
               title: 'TS II', 
               type: 'permanent', 
-              name: 'Maria Annele B Tio', 
+              name: 'Maria Annele B. Tio', 
               nickname: 'Chin', 
               image: null, 
               email: 'mabtio@dswd.gov.ph', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A']
+              phone: '+639173194395', 
+              profession: 'Psychometrician', 
+              tasks: 
+              [
+                '1. Providing Technical Assistance to regional counterparts',
+                '2. Facilitating the conduct of the PANATA KO SA BAYAN'
+              ]
             },
             { 
               title: 'AA II', 
