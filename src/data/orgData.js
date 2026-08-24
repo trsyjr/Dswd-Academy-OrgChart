@@ -1245,7 +1245,7 @@ export const orgData = {
               { 
                 title: 'PDO II', 
                 type: 'vacant', 
-                name: 'N/A', 
+                name: 'Jerick Joshua D. Bautista', 
                 nickname: 'N/A', 
                 image: null, 
                 email: 'N/A', 
