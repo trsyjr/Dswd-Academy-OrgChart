@@ -1591,7 +1591,7 @@ export const orgData = {
             { 
               title: 'AO IV', 
               type: 'cos', 
-              name: 'N/A', 
+              name: 'Jasper Nora', 
               nickname: 'N/A', 
               image: null, 
               email: 'N/A', 
