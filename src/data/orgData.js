@@ -32,10 +32,55 @@ import PIM from '../assets/kmd/Pim.jpg';
 import MONICA from '../assets/kmd/Monica.JPG';
 import AUDREY from '../assets/kmd/Audrey.JPG';
 import TONY from '../assets/kmd/Tony.JPG'
+import JING from '../assets/kmd/Jing.JPG'
+
 
 //CBD
 import DC from '../assets/cbd/DC.JPG';
+import MINA from '../assets/cbd/Carmina.JPG';
+import PAO from '../assets/cbd/Pao.JPG';
+import LJ from '../assets/cbd/LJ.JPG';
+import ORCHID from '../assets/cbd/Orchid.JPG';
+import THEA from '../assets/cbd/THEA.JPG';
+import JES from '../assets/cbd/Jesica.JPG';
+import MERL from '../assets/cbd/Merl.JPG';
+import MEANN from '../assets/cbd/Meann.JPG';
+import EDD from '../assets/cbd/Edd.JPG';
+import RUBY from '../assets/cbd/AKI.JPG';
+import CJ from '../assets/cbd/Ako.JPG';
+import KENT from '../assets/cbd/Kent.JPG';
+import NANCY from '../assets/cbd/Nancy.JPG';
+import ANGEL from '../assets/cbd/Angel.JPG';
+import JENA from '../assets/cbd/Jena.JPG';
+import KLENG from '../assets/cbd/Kleng.JPG';
+import CLA from '../assets/cbd/Cla.JPG';
+import LYKA from '../assets/cbd/Lyka.JPG';
+import JO from '../assets/cbd/Jo.JPG';
+import ALJOHN from '../assets/cbd/ALJOHN.JPG';
+import NIC from '../assets/cbd/Nic.JPG';
+import JOPS from '../assets/cbd/JOPS.JPG';
+import NOREEN from '../assets/cbd/Noreen.JPG';
+import JOY from '../assets/cbd/Joy.jpeg';
+import JOVIE from '../assets/cbd/Jovie.jpg';
+import KELLY from '../assets/cbd/Kelly.png';
+import JEX from '../assets/cbd/Jex.jpeg';
 
+//TAAORSS
+import GLO from '../assets/taaorss/Glo.JPG';
+import MAAN from '../assets/taaorss/Maan.JPG';
+import GLENDA from '../assets/taaorss/Glenda.JPG';
+import GELVES from '../assets/taaorss/Gelves.JPG';
+import SKY from '../assets/taaorss/Sky.JPG';
+import CHIN from '../assets/taaorss/Chin.jpg';
+
+//LNDD
+import NORI from '../assets/lndd/Nori.JPG';
+import ANA from '../assets/lndd/Ana.JPG';
+import KIRSTEN from '../assets/lndd/Kirsten.JPG';
+import ROS from '../assets/lndd/Ros.JPG';
+import FEM from '../assets/lndd/Fem.JPG';
+import CHA from '../assets/lndd/Cha.JPG';
+import CLIFFORD from '../assets/lndd/Clifford.JPG';
 
 export const CLASSIFICATION_STYLES = {
   director: {
@@ -513,7 +558,7 @@ export const orgData = {
                 type: 'contractual', 
                 name: 'Jennifer B. Gavarra', 
                 nickname: 'Jing', 
-                image: null, 
+                image: JING, 
                 email: 'jbgavarra@dswd.gov.ph',
                 phone: '+639190031370', 
                 profession: 'Licensed Professional Teacher',
@@ -838,7 +883,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Carmina A. Llanto', 
                 nickname: 'Mina', 
-                image: null,
+                image: MINA,
                 email: 'callanto@dswd.gov.ph', 
                 phone: '+639395082713',
                 profession: 'Teacher', 
@@ -857,7 +902,7 @@ export const orgData = {
                 type: 'permanent', 
                 name: 'Louie Jane R. Francisco', 
                 nickname: 'LJ', 
-                image: null,
+                image: LJ,
                 email: 'ljrfrancisco@dswd.gov.ph', 
                 phone: '+639453518623', 
                 profession: 'Teacher',
@@ -878,7 +923,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Jan Paolo M. Leyva', 
                 nickname: 'Pao', 
-                image: null, 
+                image: PAO, 
                 email: 'jpmleyva@dswd.gov.ph',
                 phone: '+639776590548', 
                 profession: 'Training Facilitator',
@@ -892,7 +937,7 @@ export const orgData = {
                 type: 'permanent', 
                 name: 'Orchid S. Bibit', 
                 nickname: 'Orchid', 
-                image: null, 
+                image: ORCHID, 
                 email: 'osbibit@dswd.gov.ph',
                 phone: '+639688793539', 
                 profession: 'Guidance Associate / Teacher',
@@ -911,7 +956,7 @@ export const orgData = {
                 type: 'permanent', 
                 name: 'Althea Muriel L. Pineda', 
                 nickname: 'Thea', 
-                image: null, 
+                image: THEA, 
                 email: 'amlpineda@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
@@ -922,7 +967,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Jesica S. Mencias', 
                 nickname: 'Jes', 
-                image: null, 
+                image: JES, 
                 email: 'jsmencias@dswd.gov.ph',
                 phone: '+639561442796', 
                 profession: 'Psychometrician',
@@ -941,7 +986,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Merielle O. Palacio', 
                 nickname: 'Merl', 
-                image: null, 
+                image: MERL, 
                 email: 'mopalacio@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
@@ -952,7 +997,7 @@ export const orgData = {
                 type: 'contractual', 
                 name: 'Marry Ann Dealo', 
                 nickname: 'Meann', 
-                image: null, 
+                image: MEANN, 
                 email: 'matdealo@dswd.gov.ph',
                 phone: '+639175359936', 
                 profession: 'Nurse',
@@ -968,7 +1013,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Eddniel Patrick I. Papa', 
                 nickname: 'Edd', 
-                image: null, 
+                image: EDD, 
                 email: 'epipapa@dswd.gov.ph',
                 phone: '+639703505489', 
                 profession: 'Sociologist',
@@ -990,7 +1035,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Ma. Erica Ruby F. Fernandez', 
                 nickname: 'Ruby', 
-                image: null,
+                image: RUBY,
                 email: 'merffernandez@dswd.gov.ph', 
                 phone: '+639664703781', 
                 profession: 'Professional Teacher',
@@ -1014,18 +1059,24 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Tonghie R. Sy Jr.', 
                 nickname: 'CJ', 
-                image: null, 
+                image: CJ, 
                 email: 'trsyjr@dswd.gov.ph',
                 phone: '+63905979652', 
                 profession: 'Web Developer',
-                tasks: ['N/A'] 
+                tasks: 
+                [
+                  '1. Managed LMS',
+                  '2. Development of Websites and Systems',
+                  '3. Managed CBD-PLDS Datas',
+                  '4. Other Information Technology (IT) Related'
+                ] 
               },
               { 
                 title: 'TS III', 
                 type: 'cos', 
                 name: 'Kent B. Gaspar', 
                 nickname: 'Kentchie', 
-                image: null, 
+                image: KENT, 
                 email: 'kbgaspar@dswd.gov.ph',
                 phone: '+639669328597', 
                 profession: 'IT Support Specialist',
@@ -1038,7 +1089,7 @@ export const orgData = {
                 type: 'permanent', 
                 name: 'Nancy E. Fortes', 
                 nickname: 'Nancy', 
-                image: null, 
+                image: NANCY, 
                 email: 'nefortes@dswd.gov.ph',
                 phone: '+639498459722', 
                 profession: 'SOCIAL WORKER',
@@ -1074,7 +1125,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Jovie D. Cabais', 
                 nickname: 'Jovie', 
-                image: null, 
+                image: JOVIE, 
                 email: 'jdcabais@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
@@ -1087,9 +1138,9 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Mark Angel Malapira', 
                 nickname: 'Angel', 
-                image: null, 
+                image: ANGEL, 
                 email: 'mamalapira@dswd.gov.ph',
-                phone: 'N/A', 
+                phone: 'ANGEL', 
                 profession: 'mamalapira@dswd.gov.ph',
                 tasks: ['N/A'] 
               },
@@ -1098,7 +1149,7 @@ export const orgData = {
                 type: 'contractual', 
                 name: 'Jena Mae C. Aguilar', 
                 nickname: 'Jena', 
-                image: null,
+                image: JENA,
                 email: 'jmcaguilar@dswd.gov.ph', 
                 phone: 'N/A', 
                 profession: 'N/A',
@@ -1111,7 +1162,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Klenarchi Mae E. Flores', 
                 nickname: 'Kleng', 
-                image: null, 
+                image: KLENG, 
                 email: 'kmeflores@dswd.gov.ph',
                 phone: '+639195918026', 
                 profession: 'Social Worker',
@@ -1126,7 +1177,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Maria Clarissa D. Raquinel', 
                 nickname: 'Cla', 
-                image: null, 
+                image: CLA, 
                 email: 'mcdraquinel@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
@@ -1139,7 +1190,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Nikkita Lyka Gracia L. Ermino', 
                 nickname: 'Lyka', 
-                image: null, 
+                image: LYKA, 
                 email: 'nlglermino@dswd.gov.ph',
                 phone: '+639566589841', 
                 profession: 'SOCIAL WORKER',
@@ -1161,7 +1212,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Mery Joy A. Campaña', 
                 nickname: 'Joy', 
-                image: null, 
+                image: JOY, 
                 email: 'mjacampana@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
@@ -1174,7 +1225,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Jocelyn M. Edillo', 
                 nickname: 'Jo',
-                image: null, 
+                image: JO, 
                 email: 'jmedillo@dswd.gov.ph', 
                 phone: '+639152895059', 
                 profession: 'Professional Teacher', 
@@ -1209,7 +1260,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Aljohn C. Purca', 
                 nickname: 'Aljohn', 
-                image: null, 
+                image: ALJOHN, 
                 email: 'acpurca@dswd.gov.ph', 
                 phone: 'N/A', 
                 profession: 'N/A', 
@@ -1220,6 +1271,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Jexequiel Rodriguez', 
                 nickname: 'Jex', 
+                image: JEX,
                 email: 'N/A', 
                 phone: 'N/A', 
                 profession: 'N/A', 
@@ -1232,7 +1284,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Christian Nicole D. Dorado', 
                 nickname: 'Nic', 
-                image: null, 
+                image: NIC, 
                 email: 'cnddorado@dswd.gov.ph', 
                 phone: '+639298988599', 
                 profession: 'Social Worker', 
@@ -1254,7 +1306,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Jose Tiofisto M. Pacao', 
                 nickname: 'Jops', 
-                image: null, 
+                image: JOPS, 
                 email: 'jtmpacao@dswd.gov.ph', 
                 phone: 'N/A', 
                 profession: 'N/A', 
@@ -1267,7 +1319,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Noreen N. Data', 
                 nickname: 'Noreen', 
-                image: null, 
+                image: NOREEN, 
                 email: 'nndata@dswd.gov.ph', 
                 phone: '+639993906707', 
                 profession: 'Social Worker', 
@@ -1283,7 +1335,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Justine Kelly E. Diaz', 
                 nickname: 'Kelly', 
-                image: null, 
+                image: KELLY, 
                 email: 'jkediaz@dswd.gov.ph', 
                 phone: 'N/A', 
                 profession: 'N/A', 
@@ -1298,10 +1350,10 @@ export const orgData = {
           stack: [
             { 
               title: 'TS III', 
-              type: 'cos', 
+              type: 'permanent', 
               name: 'Gloria G. Alvarado', 
               nickname: 'Glo', 
-              image: null, 
+              image: GLO, 
               email: 'ggalvarado@dswd.gov.ph', 
               phone: 'N/A', 
               profession: 'N/A', 
@@ -1311,8 +1363,8 @@ export const orgData = {
               title: 'PDO IV', 
               type: 'cos', 
               name: 'Mary Ann S. Evangelista', 
-              nickname: 'MAAN', 
-              image: null, 
+              nickname: 'Maan', 
+              image: MAAN, 
               email: 'masevangelista@dswd.gov.ph', 
               phone: 'N/A', 
               profession: 'N/A', 
@@ -1356,7 +1408,7 @@ export const orgData = {
               type: 'cos', 
               name: 'Glenda Fulong', 
               nickname: 'Glenda', 
-              image: null, 
+              image: GLENDA, 
               email: 'gfulong@dswd.gov.ph', 
               phone: 'N/A', 
               profession: 'N/A', 
@@ -1389,7 +1441,7 @@ export const orgData = {
               type: 'cos', 
               name: 'Gelves C. Almiñe', 
               nickname: 'Gelves', 
-              image: null, 
+              image: GELVES, 
               email: 'gcalmine@dswd.gov.ph', 
               phone: '+639669624152', 
               profession: 'Industrial Engineer', 
@@ -1404,7 +1456,7 @@ export const orgData = {
               type: 'cos', 
               name: 'Christian B. Baylosis', 
               nickname: 'Sky', 
-              image: null, 
+              image: SKY, 
               email: 'cbbaylosis@dswd.gov.ph', 
               phone: '+639994068313', 
               profession: 'Statistician / Licensed Professional Teacher', 
@@ -1435,7 +1487,7 @@ export const orgData = {
               type: 'permanent', 
               name: 'Maria Annele B. Tio', 
               nickname: 'Chin', 
-              image: null, 
+              image: CHIN, 
               email: 'mabtio@dswd.gov.ph', 
               phone: '+639173194395', 
               profession: 'Psychometrician', 
@@ -1466,10 +1518,10 @@ export const orgData = {
       leads: [
         {
           title: 'TS IV - OIC',
-          type: 'cos',
+          type: 'permanent',
           name: 'Norilix M. Razalan',
           nickname: 'Nori',
-          image: null,
+          image: NORI,
           email: 'nmrazalan@dswd.gov.ph',
           phone: 'N/A',
           profession: 'N/A',
@@ -1486,7 +1538,7 @@ export const orgData = {
               type: 'cos', 
               name: 'Clifford Robin C. Gabatin', 
               nickname: 'N/A', 
-              image: null, 
+              image: CLIFFORD, 
               email: 'crcgabatin@dswd.gov.ph', 
               phone: 'N/A', 
               profession: 'N/A', 
@@ -1497,7 +1549,7 @@ export const orgData = {
               type: 'permanent', 
               name: 'Analiza S. Ileto', 
               nickname: 'Ana', 
-              image: null, 
+              image: ANA, 
               email: 'asileto@dswd.gov.ph', 
               phone: 'N/A', 
               profession: 'N/A', 
@@ -1508,7 +1560,7 @@ export const orgData = {
               type: 'cos', 
               name: 'Kirsten Patrice E. Maglalang', 
               nickname: 'Ten', 
-              image: null, 
+              image: KIRSTEN, 
               email: 'kpemaglalang@dswd.gov.ph', 
               phone: 'N/A', 
               profession: 'N/A', 
@@ -1537,7 +1589,7 @@ export const orgData = {
               tasks: ['N/A'] 
             },
             { 
-              title: 'SWO III', 
+              title: 'AO IV', 
               type: 'cos', 
               name: 'N/A', 
               nickname: 'N/A', 
@@ -1548,7 +1600,7 @@ export const orgData = {
               tasks: ['N/A'] 
             },
             { 
-              title: 'AO IV', 
+              title: 'AO II', 
               type: 'vacant', 
               name: 'N/A', 
               nickname: 'N/A', 
@@ -1566,10 +1618,10 @@ export const orgData = {
           stack: [
             { 
               title: 'PDO V', 
-              type: 'cos', 
+              type: 'contractual', 
               name: 'Rosylyn Arnigo', 
               nickname: 'N/A', 
-              image: null, 
+              image: ROS, 
               email: 'rmarnigo@dswd.gov.ph', 
               phone: 'N/A', 
               profession: 'N/A', 
@@ -1580,7 +1632,7 @@ export const orgData = {
               type: 'cos', 
               name: 'Richelle Fem A. Juan', 
               nickname: 'Fem', 
-              image: null, 
+              image: FEM, 
               email: 'rfajuan@dswd.gov.ph', 
               phone: 'N/A', 
               profession: 'N/A', 
@@ -1588,7 +1640,7 @@ export const orgData = {
             },
             { 
               title: 'SWO III', 
-              type: 'permanent', 
+              type: 'cos', 
               name: 'Abigail Joyce S. Barrera', 
               nickname: 'N/A', 
               image: null, 
@@ -1624,7 +1676,7 @@ export const orgData = {
               type: 'permanent', 
               name: 'Charito S. Carambas', 
               nickname: 'Cha', 
-              image: null, 
+              image: CHA, 
               email: 'cscarambas@dswd.gov.ph', 
               phone: 'N/A', 
               profession: 'N/A', 
