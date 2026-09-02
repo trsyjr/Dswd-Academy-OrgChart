@@ -688,7 +688,7 @@ function OrgTree({ node, onInspect, searchQuery }) {
 
           <div className="relative z-10 my-8 w-full flex justify-center items-start">
             <div className="relative flex flex-col items-center">
-              <VerticalLine height={48} />
+              <VerticalLine height={200} />
 
               <div className="absolute top-[24px] left-1/2 w-[600px] h-[2.5px] bg-slate-500 z-0 pointer-events-none print-tree-connector-h" />
 

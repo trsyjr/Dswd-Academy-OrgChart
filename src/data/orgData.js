@@ -335,6 +335,31 @@ export const orgData = {
             'Prepares memoranda and other related documentary requirements; and',
             'Other related tasks that may be assigned from time to time.'
           ]
+        },
+        {
+          title: 'Nurse',
+          type: 'cos',
+          name: 'N/A',
+          nickname: 'N/A',
+          image: null,
+          phone: 'N/A',
+          email: 'N/A',
+          profession: 'N/A',
+          tasks: ['N/A']
+        },
+        {
+          title: 'Nurse',
+          type: 'cos',
+          name: 'N/A',
+          nickname: 'N/A',
+          image: null,
+          phone: 'N/A',
+          email: 'N/A',
+          profession: 'N/A',
+          tasks: 
+          [
+            'N/A',
+          ]
         }
       ],
       [
@@ -409,7 +434,7 @@ export const orgData = {
             'Provides administrative support',
             'Performs secretariat functions'
           ]
-        }
+        },
       ]
     ]
   },
@@ -595,9 +620,9 @@ export const orgData = {
                 nickname: 'Jas', 
                 image: JAS, 
                 email: 'jenacabuan@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639166979392', 
+                profession: 'Social Worker',
+                tasks: ['Development, enhancement, review of learning modules, focal person on Child Protection'] 
               },
               { 
                 title: 'LIB II', 
@@ -960,7 +985,6 @@ export const orgData = {
                   'Technical Assistance',
                   'Records Management and Documentation Control',
                   'Documentation and Reporting',
-                  'Financial Management'
 
                 ] 
               }
@@ -1006,9 +1030,9 @@ export const orgData = {
                 nickname: 'Thea', 
                 image: THEA, 
                 email: 'amlpineda@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639176570217', 
+                profession: 'Training Specialist',
+                tasks: ['Oversee the plans, training management standards, and overall operations management of the DSWD Academy training programs.'] 
               },
               { 
                 title: 'TS IV', 
