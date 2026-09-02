@@ -13,6 +13,7 @@ import NADINE from "../assets/obd/Nadine.JPG";
 import RHENCY from "../assets/obd/Rhency.JPG";
 import HAROLD from "../assets/obd/Harold.JPG";
 import DADA from "../assets/obd/Dada.JPG";
+import RUBYANNA from "../assets/obd/RubyAnna.jpg";
 
 //KM
 import ANGESSE from '../assets/kmd/Angesse.JPG';
@@ -28,12 +29,17 @@ import TERE from '../assets/kmd/Tere.JPG';
 import DALE from '../assets/kmd/Dale.JPG';
 import DANA from '../assets/kmd/Dana.JPG';
 import ELLA from '../assets/kmd/Ella.JPG';
-import PIM from '../assets/kmd/Pim.jpg';
+import PIM from '../assets/kmd/Pim.jpeg';
 import MONICA from '../assets/kmd/Monica.JPG';
 import AUDREY from '../assets/kmd/Audrey.JPG';
-import TONY from '../assets/kmd/Tony.JPG'
-import JING from '../assets/kmd/Jing.JPG'
-
+import TONY from '../assets/kmd/Tony.JPG';
+import JING from '../assets/kmd/Jing.JPG';
+import JESSICA from '../assets/kmd/Jessica.png';
+import GLENN from '../assets/kmd/Glenn.jpg';
+import LOWE from '../assets/kmd/Lowe.png';
+import LEO from '../assets/kmd/Leo.png';
+import JELLY from '../assets/kmd/Jelly.png';
+import CHE from '../assets/kmd/Che.png';
 
 //CBD
 import DC from '../assets/cbd/DC.JPG';
@@ -64,6 +70,7 @@ import JOY from '../assets/cbd/Joy.jpeg';
 import JOVIE from '../assets/cbd/Jovie.jpg';
 import KELLY from '../assets/cbd/Kelly.png';
 import JEX from '../assets/cbd/Jex.jpeg';
+import JERICK from '../assets/cbd/Jerick.jpeg';
 
 //TAAORSS
 import GLO from '../assets/taaorss/Glo.JPG';
@@ -72,6 +79,10 @@ import GLENDA from '../assets/taaorss/Glenda.JPG';
 import GELVES from '../assets/taaorss/Gelves.JPG';
 import SKY from '../assets/taaorss/Sky.JPG';
 import CHIN from '../assets/taaorss/Chin.jpg';
+import KATH from '../assets/taaorss/Kath.JPG';
+import HARDAWY from '../assets/taaorss/Hardawy.jpg';
+import JESSA from '../assets/taaorss/Jessa.jpeg';
+import HANNAH from '../assets/taaorss/Hannah.png';
 
 //LNDD
 import NORI from '../assets/lndd/Nori.JPG';
@@ -81,6 +92,7 @@ import ROS from '../assets/lndd/Ros.JPG';
 import FEM from '../assets/lndd/Fem.JPG';
 import CHA from '../assets/lndd/Cha.JPG';
 import CLIFFORD from '../assets/lndd/Clifford.JPG';
+import GLYZA from '../assets/lndd/Glyza.jpeg';
 
 export const CLASSIFICATION_STYLES = {
   director: {
@@ -181,9 +193,9 @@ export const orgData = {
           profession: 'Admin',
           tasks: 
           [
-            '1. Tracking incoming documents and route to concern division/ staff',
-            '2. Manage Paspas WF of the Assistant Bureau Director', 
-            '3. Alternate focal of HR and Property Management'
+            'Tracking incoming documents and route to concern division/ staff',
+            'Manage Paspas WF of the Assistant Bureau Director', 
+            'Alternate focal of HR and Property Management'
           ]
         },
         {
@@ -197,11 +209,11 @@ export const orgData = {
           profession: 'Procurement and Property & Supplies',
           tasks: 
           [
-            '1. Preparation of  PRs',
-            '2. Market Scoping, Contacting Suppliers for Request for Quotations',
-            '3. Coordination with Procurement Division for Procured Items/POs/Evaluation of Quotations.',
-            '4. Coordination With Budget Divisions & Accounting Divisions for funding of PO, & AOQs',
-            '5. Coordination with BGMD, ICTMS & DMS for Technical Specifications'
+            'Preparation of  PRs',
+            'Market Scoping, Contacting Suppliers for Request for Quotations',
+            'Coordination with Procurement Division for Procured Items/POs/Evaluation of Quotations.',
+            'Coordination With Budget Divisions & Accounting Divisions for funding of PO, & AOQs',
+            'Coordination with BGMD, ICTMS & DMS for Technical Specifications'
           ]
         },
         {
@@ -215,9 +227,9 @@ export const orgData = {
           profession: 'Administrative Assistant I',
           tasks: 
           [
-            '1. DSWD Academy Email Manager',
-            '2. Procurement Assistant',
-            '3. Focal ship on Wellness and 7s'
+            'DSWD Academy Email Manager',
+            'Procurement Assistant',
+            'Focal ship on Wellness and 7s'
           ]
         },
         {
@@ -231,8 +243,8 @@ export const orgData = {
           profession: 'Social Worker',
           tasks: 
           [
-            '1. Special projects of BD',
-            '2. Manage OBD with ABD'
+            'Special projects of BD',
+            'Manage OBD with ABD'
           ]
         },
         {
@@ -250,7 +262,7 @@ export const orgData = {
       [
         {
           title: 'AO IV',
-          type: 'cos',
+          type: 'permanent',
           name: 'Mayzel C. Guerrero',
           nickname: 'Maze',
           image: MAYZEL,
@@ -259,8 +271,8 @@ export const orgData = {
           profession: 'FINANCIAL ANALYST',
           tasks: 
           [
-            '1. Accounting', 
-            '2. Budgeting and Procurement'
+            'Accounting', 
+            'Budgeting and Procurement'
           ]
         },
         {
@@ -274,15 +286,15 @@ export const orgData = {
           profession: 'Planning Officer',
           tasks: 
           [
-            '1. Strategy Performance Management',
-            '2. Planning and Budget Coordination',
-            '3. Policy Review and Development',
-            '4. Organizational Development',
-            '5. HPMES Implementation',
-            '6. Monitoring and Evaluation Coordination',
-            '7. Permanent Grievance Focal',
-            '8. Alternate GAD Focal',
-            '9. Permanent LGBTQIA+ Focal'
+            'Strategy Performance Management',
+            'Planning and Budget Coordination',
+            'Policy Review and Development',
+            'Organizational Development',
+            'HPMES Implementation',
+            'Monitoring and Evaluation Coordination',
+            'Permanent Grievance Focal',
+            'Alternate GAD Focal',
+            'Permanent LGBTQIA+ Focal'
           ]
         },
         {
@@ -290,16 +302,16 @@ export const orgData = {
           type: 'permanent',
           name: 'Ruby Anna R. Tolentino',
           nickname: 'RA',
-          image: null,
+          image: RUBYANNA,
           phone: '+639217368804',
           email: 'rartolentino@dswd.gov.ph',
           profession: 'Financial Analyst',
           tasks: 
           [
-            '1. Manage the financial related transactions such as utilization of the DSWD Academy',
-            '2. Prepares Budget Proposal and Work and Financial Plan of the DSWD Academy',
-            '3. Prepares financial report',
-            '4. Coordinate to the Regional Focal regarding financial utilization'
+            'Manage the financial related transactions such as utilization of the DSWD Academy',
+            'Prepares Budget Proposal and Work and Financial Plan of the DSWD Academy',
+            'Prepares financial report',
+            'Coordinate to the Regional Focal regarding financial utilization'
           ]
         },
         {
@@ -313,12 +325,12 @@ export const orgData = {
           profession: 'HR Specialist',
           tasks: 
           [
-            '1.	Provides administrative and technical support to the Bureau Director',
-            '2. Facilitate the hiring processes of the Bureau',
-            '3. Facilitate processing of personnel requirements of the Bureau',
-            '4. Administer HR-related concerns among permanent and COS staff, such as applications for leave, CDOs and DTR, among others',
-            '5. Prepares memoranda and other related documentary requirements; and',
-            '6. Other related tasks that may be assigned from time to time.'
+            'Provides administrative and technical support to the Bureau Director',
+            'Facilitate the hiring processes of the Bureau',
+            'Facilitate processing of personnel requirements of the Bureau',
+            'Administer HR-related concerns among permanent and COS staff, such as applications for leave, CDOs and DTR, among others',
+            'Prepares memoranda and other related documentary requirements; and',
+            'Other related tasks that may be assigned from time to time.'
           ]
         }
       ],
@@ -334,8 +346,8 @@ export const orgData = {
           profession: 'Administrative Assistant',
           tasks: 
           [
-            '1. Records and Documents Management',
-            '2. Email Management'
+            'Records and Documents Management',
+            'Email Management'
           ]
         },
         {
@@ -349,9 +361,9 @@ export const orgData = {
           profession: 'Admin',
           tasks: 
           [
-            '1. ATRO Focal', 
-            '2. SO and Authrority to Travel Focal', 
-            '3. CSC/Non CSC and 8888 Focal'
+            'ATRO Focal', 
+            'SO and Authrority to Travel Focal', 
+            'CSC/Non CSC and 8888 Focal'
           ]
         },
         {
@@ -365,8 +377,8 @@ export const orgData = {
           profession: 'ADMIN STAFF-GOVT EMPLOYEE',
           tasks: 
           [
-            '1. Outgoing Documents',
-            '2. RMO focal'
+            'Outgoing Documents',
+            'RMO focal'
           ]
         },
         {
@@ -391,8 +403,8 @@ export const orgData = {
           profession: 'ADMINISTRATIVE ASSISTANT',
           tasks: 
           [
-            '1. Provides administrative support',
-            '2. Performs secretariat functions'
+            'Provides administrative support',
+            'Performs secretariat functions'
           ]
         }
       ]
@@ -453,11 +465,11 @@ export const orgData = {
                 profession: 'Psychometrician',
                 tasks: 
                 [
-                  '1. Provide Technical Assistance in finalizing knowledge products submitted to the DSWD Academy',
-                  '2. Designing computer-based, web-based, or multimedia-based layouts, graphics, animation, video, sound, and/or content for use in the presentation on KM. e.g. video productions, website, CDs, DVDs, promotional materials, and other electronic media',
-                  '3. Assist in the management of the DSWD Core Group of Specialists',
-                  '4. Identify and/or develop contents to be uploaded to the KM Portal such as announcements, feature stories, success stories, etc.',
-                  '5. Provide support in the implementation of activities for the different knowledge sharing and collaboration mechanisms including the learning facilities managed by the Division/Bureau'
+                  'Provide Technical Assistance in finalizing knowledge products submitted to the DSWD Academy',
+                  'Designing computer-based, web-based, or multimedia-based layouts, graphics, animation, video, sound, and/or content for use in the presentation on KM. e.g. video productions, website, CDs, DVDs, promotional materials, and other electronic media',
+                  'Assist in the management of the DSWD Core Group of Specialists',
+                  'Identify and/or develop contents to be uploaded to the KM Portal such as announcements, feature stories, success stories, etc.',
+                  'Provide support in the implementation of activities for the different knowledge sharing and collaboration mechanisms including the learning facilities managed by the Division/Bureau'
                 ]
               }
             ],
@@ -473,8 +485,8 @@ export const orgData = {
                 profession: 'Social worker',
                 tasks: 
                 [
-                  '1. Develop instructional design  and modules/ manuals',
-                  '2. TA to OBS and partner agencies in module and instructional design development'
+                  'Develop instructional design  and modules/ manuals',
+                  'TA to OBS and partner agencies in module and instructional design development'
                 ]
               },
               { 
@@ -525,8 +537,8 @@ export const orgData = {
                 profession: 'Social Worker',
                 tasks: 
                 [
-                  '1. KM Writer',
-                  '2. CGS Focal, etc.'
+                  'KM Writer',
+                  'CGS Focal, etc.'
                 ] 
               },
               { 
@@ -545,10 +557,10 @@ export const orgData = {
               { 
                 title: 'TS III', 
                 type: 'cos', 
-                name: 'Jake Remphsy P. Dy', 
-                nickname: 'Jake', 
+                name: 'N/A', 
+                nickname: 'N/A', 
                 image: null, 
-                email: 'jrpdy@dswd.gov.ph',
+                email: 'N/A',
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
@@ -564,11 +576,11 @@ export const orgData = {
                 profession: 'Licensed Professional Teacher',
                 tasks: 
                 [
-                  "1. Design and develop learning modules",
-                  "2. Maintain learning modules registry and good practice documentation inventory",
-                  "3. Monitor progress and completion on the 4Ps 101 e-learning course",
-                  "4. Provide technical assistance on knowledge management (KM) related concerns",
-                  "5. Support or lead KM-related activities by acting as learning management team"
+                  "Design and develop learning modules",
+                  "Maintain learning modules registry and good practice documentation inventory",
+                  "Monitor progress and completion on the 4Ps 101 e-learning course",
+                  "Provide technical assistance on knowledge management (KM) related concerns",
+                  "Support or lead KM-related activities by acting as learning management team"
                 ]
               }
             ],
@@ -616,11 +628,12 @@ export const orgData = {
                 image: TERE, 
                 email: 'mtmreyes@dswd.gov.ph',
                 phone: '+639171174711', 
-                profession: 'LPT',
+                profession: 'LICENSED PROFESSIONAL TEACHER',
                 tasks: 
                 [
-                  '1. Module Developer',
-                  '2. Learning Management Team'
+                  'Module Developer',
+                  'Learning Management Team',
+                  'Technical Assistance'
                 ] 
               }
             ],
@@ -636,12 +649,12 @@ export const orgData = {
                 profession: 'Licensed Teacher', 
                 tasks: 
                 [
-                  '1. KM Writer',
-                  '2. Conduct reviews and packaging of knowledge products, knowledge sharing sessions, good practice documentations, and intellectual property (IP) concerns',
-                  '3. Process requests provision of resource persons and support to the mobilization of CGS pool of experts',
-                  '4. Provide technical assistance on KM systems, mechanisms and intellectual property',
-                  '5. Support to module development activities; and',
-                  '6. Other tasks performed as instructed.'
+                  'KM Writer',
+                  'Conduct reviews and packaging of knowledge products, knowledge sharing sessions, good practice documentations, and intellectual property (IP) concerns',
+                  'Process requests provision of resource persons and support to the mobilization of CGS pool of experts',
+                  'Provide technical assistance on KM systems, mechanisms and intellectual property',
+                  'Support to module development activities; and',
+                  'Other tasks performed as instructed.'
                 ] 
               },
               { 
@@ -651,9 +664,17 @@ export const orgData = {
                 nickname: 'Dana', 
                 image: DANA, 
                 email: 'drmisanes@dswd.gov.ph',
-                phone: 'N/A',
-                profession: 'N/A', 
-                tasks: ['N/A'] 
+                phone: '+639128814993',
+                profession: 'Social Worker', 
+                tasks: 
+                [
+                  'Review Knowledge Product and Knowledge Sharing Session Document',
+                  'Develop/Enhance/Facilitated Instructional Design and Training Module',
+                  'Packaged Knowledge Product',
+                  'Develop/Enhance or provide comments on Policy Document',
+                  'Management of Bayanihang Bayan Program',
+                  'Provision of Technical Assistance'
+                ] 
               }
             ],
             [
@@ -672,24 +693,31 @@ export const orgData = {
                 title: 'SWO III', 
                 type: 'cos', 
                 name: 'Kristine C. Peralta',
-                nickname: 'N/A', 
+                nickname: 'Tin', 
                 image: null, 
                 email: 'kcperalta@dswd.gov.ph',
-                phone: 'N/A',
-                profession: 'N/A', 
-                tasks: ['N/A'] }
+                phone: '+639674467804',
+                profession: 'Social Worker', 
+                tasks: 
+                [
+                  'Module Developer',
+                  'Learning Management Team',
+                  'Perform other tasks assigned as needed'
+                ] 
+              }
             ]
           ],
           bottomNode: { 
             title: 'AA II', 
             type: 'cos', 
             name: 'John Ronald Bascon', 
-            nickname: 'N/A', 
+            nickname: 'John', 
             image: null,
             email: 'jrbascon@dswd.gov.ph', 
-            phone: 'N/A', 
+            phone: '+639947703148', 
             profession: 'N/A',
-            tasks: ['N/A'] }
+            tasks: ['Records and Documents Management'] 
+          }
         },
         {
           id: 'oms',
@@ -723,10 +751,10 @@ export const orgData = {
               { 
                 title: 'TS III', 
                 type: 'cos', 
-                name: 'N/A', 
-                nickname: 'N/A', 
+                name: 'Jake Remphsy P. Dy', 
+                nickname: 'Jake', 
                 image: null, 
-                email: 'N/A',
+                email: 'jrpdy@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
@@ -738,22 +766,26 @@ export const orgData = {
                 nickname: 'Monica', 
                 image: MONICA, 
                 email: 'mssolesta@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639454405872', 
+                profession: 'Social Worker',
+                tasks: 
+                [
+                  'Secretariat support to the ASEAN Social Work Consortium-Philippines (ASWC-PH).',
+                  'Provide support in managing the Academy`s partnerships and coordination with partners organizations.'
+                ] 
               }
             ],
             [
               { 
                 title: 'AO V', 
                 type: 'cos', 
-                name: 'Virginia W Setias', 
+                name: 'Virginia W. Setias', 
                 nickname: 'Che', 
-                image: null, 
+                image: CHE, 
                 email: 'vwsetias@dswd.gov.ph',
-                phone: 'N/A', 
-                profession: 'N/A',
-                tasks: ['N/A'] 
+                phone: '+639052300025', 
+                profession: 'Mathematician',
+                tasks: ['Facility Finance & Admin Officer'] 
               },
               { 
                 title: 'SWO III', 
@@ -783,7 +815,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Jelly D. Orcales', 
                 nickname: 'N/A', 
-                image: null,
+                image: JELLY,
                 email: 'jdorcales@dswd.gov.ph', 
                 phone: 'N/A', 
                 profession: 'N/A',
@@ -807,7 +839,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Jhon Leo A. Toledo', 
                 nickname: 'Leo', 
-                image: null,
+                image: LEO,
                 email: 'jlatoledo@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
@@ -829,34 +861,47 @@ export const orgData = {
               { 
                 title: 'HHA III', 
                 type: 'cos', 
+                name: 'Glenn M. Lozano', 
+                nickname: 'N/A', 
+                image: GLENN, 
+                email: 'gmlozano@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              }
+            ],
+            [
+              { 
+                title: 'HHA III', 
+                type: 'cos', 
+                name: 'Jessica B. Ungui', 
+                nickname: 'N/A', 
+                image: JESSICA, 
+                email: 'jbungui@dswd.gov.ph',
+                phone: 'N/A', 
+                profession: 'N/A',
+                tasks: ['N/A'] 
+              },
+              { 
+                title: 'HHA III', 
+                type: 'cos', 
                 name: 'Lowegie S. Saliendres', 
                 nickname: 'Lowe', 
-                image: null, 
+                image: LOWE, 
                 email: 'lssaliendres@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
               }
             ]
-          ],
-          bottomNode: { 
-            title: 'HHA III', 
-            type: 'cos', 
-            name: 'Glenn M. Lozano', 
-            nickname: 'Glenn', 
-            image: null, 
-            email: 'gmlozano@dswd.gov.ph',
-            phone: 'N/A', 
-            profession: 'N/A',
-            tasks: ['N/A'] 
-          }
+          ]
         }
       ]
     },
     {
       id: 'cbd',
       title: 'CAPABILITY BUILDING DIVISION',
-      leads: [
+      leads: [  
         {
           title: 'SWO V',
           type: 'permanent',
@@ -889,12 +934,12 @@ export const orgData = {
                 profession: 'Teacher', 
                 tasks: 
                 [
-                  '1. CapBuild Technical Assistance Focal; Social Protection Focal (Alt. Focal);',
-                  '2. Training on Camp Coordination and Camp Management Focal (2026);',
-                  '3. Training on Women Friendly Space Management (2026);',
-                  '4. CapBuild Lab Trainings Focal;',
-                  '5. Communications Officer (Ad Hoc);',
-                  '6. Onboarding Team Lead (Ad Hoc)'
+                  'CapBuild Technical Assistance Focal; Social Protection Focal (Alt. Focal);',
+                  'Training on Camp Coordination and Camp Management Focal (2026);',
+                  'Training on Women Friendly Space Management (2026);',
+                  'CapBuild Lab Trainings Focal;',
+                  'Communications Officer (Ad Hoc);',
+                  'Onboarding Team Lead (Ad Hoc)'
                 ] 
               },
               { 
@@ -908,11 +953,11 @@ export const orgData = {
                 profession: 'Teacher',
                 tasks: 
                 [
-                  '1. Learning Management Team',
-                  '2. Technical Assistance',
-                  '3. Records Management and Documentation Control',
-                  '4. Documentation and Reporting',
-                  '5. Financial Management'
+                  'Learning Management Team',
+                  'Technical Assistance',
+                  'Records Management and Documentation Control',
+                  'Documentation and Reporting',
+                  'Financial Management'
 
                 ] 
               }
@@ -943,10 +988,10 @@ export const orgData = {
                 profession: 'Guidance Associate / Teacher',
                 tasks: 
                 [
-                  '1. Learning Management Team',
-                  '2. Coordinates the capability-building programs and projects of the Academy',
-                  '3. Co-facilitates pre-, actual-, and post-conduct capability-building activities',
-                  '4. Performs other tasks as may be required by the Division Chief/Section Head.'
+                  'Learning Management Team',
+                  'Coordinates the capability-building programs and projects of the Academy',
+                  'Co-facilitates pre-, actual-, and post-conduct capability-building activities',
+                  'Performs other tasks as may be required by the Division Chief/Section Head.'
                 ] 
               }
             ],
@@ -973,10 +1018,10 @@ export const orgData = {
                 profession: 'Psychometrician',
                 tasks: 
                 [
-                  '1. Learning and Development (L&D) Management',
-                  '2. Technical Support',
-                  '3. Learning Delivery',
-                  '4. Staff Supervision and Development'
+                  'Learning and Development (L&D) Management',
+                  'Technical Support',
+                  'Learning Delivery',
+                  'Staff Supervision and Development'
                 ] 
               }
             ],
@@ -1019,15 +1064,15 @@ export const orgData = {
                 profession: 'Sociologist',
                 tasks: 
                 [
-                  '1. Responsible for performing overall capability-building roles and functions',
-                  '2. Undertakes the conceptualization of capability building programs including course designs, curriculum development, research, and assessment of competency requirement',
-                  '3. Coordinates the capability building programs and projects of the Division/Bureau',
-                  '4. Prepares, reviews and enhances training proposal/training design',
-                  '5. Manages/facilitates actual conduct of capability building activities',
-                  '6. Conducts training evaluation and prepares necessary reports',
-                  '7. Develops and enhances training manuals/modules',
-                  '8. Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.; and',
-                  '9. Performs other tasks as may be required by the Chief and/or the Director.'
+                  'Responsible for performing overall capability-building roles and functions',
+                  'Undertakes the conceptualization of capability building programs including course designs, curriculum development, research, and assessment of competency requirement',
+                  'Coordinates the capability building programs and projects of the Division/Bureau',
+                  'Prepares, reviews and enhances training proposal/training design',
+                  'Manages/facilitates actual conduct of capability building activities',
+                  'Conducts training evaluation and prepares necessary reports',
+                  'Develops and enhances training manuals/modules',
+                  'Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.; and',
+                  'Performs other tasks as may be required by the Chief and/or the Director.'
                 ] 
               },
               { 
@@ -1041,15 +1086,15 @@ export const orgData = {
                 profession: 'Professional Teacher',
                 tasks: 
                 [
-                  '1. Responsible for performing overall capability-building roles and functions',
-                  '2. Undertakes the conceptualization of capability-building programs including course designs, curriculum development, research, and assessment of the competency requirement',
-                  '3. Coordinates the capability building programs and projects of the Division/Bureau',
-                  '4. Prepares, reviews and enhances training proposal/training design',
-                  '5. Manages/facilitates actual conduct of capability building activities',
-                  '6. Conducts training evaluation and prepares necessary reports',
-                  '7. Develops and enhances training manuals/modules',
-                  '8. Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc; and',
-                  '9. Performs other tasks as may be required by the Chief and/or the Director.'
+                  'Responsible for performing overall capability-building roles and functions',
+                  'Undertakes the conceptualization of capability-building programs including course designs, curriculum development, research, and assessment of the competency requirement',
+                  'Coordinates the capability building programs and projects of the Division/Bureau',
+                  'Prepares, reviews and enhances training proposal/training design',
+                  'Manages/facilitates actual conduct of capability building activities',
+                  'Conducts training evaluation and prepares necessary reports',
+                  'Develops and enhances training manuals/modules',
+                  'Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc; and',
+                  'Performs other tasks as may be required by the Chief and/or the Director.'
                 ] 
               }
             ],
@@ -1065,10 +1110,10 @@ export const orgData = {
                 profession: 'Web Developer',
                 tasks: 
                 [
-                  '1. Managed LMS',
-                  '2. Development of Websites and Systems',
-                  '3. Managed CBD-PLDS Datas',
-                  '4. Other Information Technology (IT) Related'
+                  'Managed LMS',
+                  'Development of Websites and Systems',
+                  'Managed CBD-PLDS Data',
+                  'Other Information Technology (IT) Related'
                 ] 
               },
               { 
@@ -1095,29 +1140,29 @@ export const orgData = {
                 profession: 'SOCIAL WORKER',
                 tasks: 
                 [
-                  "1. Conduct competency and learning needs assessments.",
-                  "2. Analyze organizational, functional, and individual training requirements.",
-                  "3. Recommend appropriate learning and development interventions.",
-                  "4. Design competency-based training programs, curricula, modules, and learning materials.",
-                  "5. Develop session guides, facilitator's manuals, participant handbooks, and assessment tools.",
-                  "6. Integrate adult learning principles and innovative instructional methodologies into program design.",
-                  "7. Serve as resource person, facilitator, moderator, or learning manager during training programs.",
-                  "8. Apply participatory, learner-centered, and experiential learning approaches.",
-                  "9. Manage classroom and virtual learning environments effectively.",
-                  "10. Plan, organize, and coordinate training schedules, logistics, and participant management.",
-                  "11. Collaborate with subject matter experts, partner agencies, and stakeholders.",
-                  "12. Ensure smooth implementation of learning activities.",
-                  "13. Monitor training implementation and participant progress.",
-                  "14. Evaluate learning outcomes using appropriate assessment methodologies.",
-                  "15. Prepare post-training evaluation reports and recommend program improvements.",
-                  "16. Provide technical assistance, coaching, and mentoring to field offices and partner institutions.",
-                  "17. Support the implementation of competency-based learning systems.",
-                  "18. Assist in developing standards, guidelines, and operational procedures.",
-                  "19. Coordinate with government agencies, academic institutions, professional organizations, and development partners.",
-                  "20. Participate in technical working groups and collaborative learning initiatives.",
-                  "21. Prepare technical reports, work plans, budget proposals, and accomplishment reports.",
-                  "22. Ensure compliance with organizational policies, procurement requirements, and quality standards.",
-                  "23. Perform other related functions as may be assigned by management."
+                  "Conduct competency and learning needs assessments.",
+                  "Analyze organizational, functional, and individual training requirements.",
+                  "Recommend appropriate learning and development interventions.",
+                  "Design competency-based training programs, curricula, modules, and learning materials.",
+                  "Develop session guides, facilitator's manuals, participant handbooks, and assessment tools.",
+                  "Integrate adult learning principles and innovative instructional methodologies into program design.",
+                  "Serve as resource person, facilitator, moderator, or learning manager during training programs.",
+                  "Apply participatory, learner-centered, and experiential learning approaches.",
+                  "anage classroom and virtual learning environments effectively.",
+                  "Plan, organize, and coordinate training schedules, logistics, and participant management.",
+                  "Collaborate with subject matter experts, partner agencies, and stakeholders.",
+                  "Ensure smooth implementation of learning activities.",
+                  "Monitor training implementation and participant progress.",
+                  "Evaluate learning outcomes using appropriate assessment methodologies.",
+                  "Prepare post-training evaluation reports and recommend program improvements.",
+                  "Provide technical assistance, coaching, and mentoring to field offices and partner institutions.",
+                  "Support the implementation of competency-based learning systems.",
+                  "Assist in developing standards, guidelines, and operational procedures.",
+                  "Coordinate with government agencies, academic institutions, professional organizations, and development partners.",
+                  "Participate in technical working groups and collaborative learning initiatives.",
+                  "Prepare technical reports, work plans, budget proposals, and accomplishment reports.",
+                  "Ensure compliance with organizational policies, procurement requirements, and quality standards.",
+                  "Perform other related functions as may be assigned by management."
                 ]
               },
               { 
@@ -1168,8 +1213,8 @@ export const orgData = {
                 profession: 'Social Worker',
                 tasks: 
                 [
-                  '1. Learning Management Team', 
-                  '2. Review Activity Proposals from OBSUs'
+                  'Learning Management Team', 
+                  'Review Activity Proposals from OBSUs'
                 ] 
               },
               { 
@@ -1196,15 +1241,15 @@ export const orgData = {
                 profession: 'SOCIAL WORKER',
                 tasks: 
                 [
-                  "1. Responsible for performing overall capability-building roles and functions;",
-                  "2. Undertakes the conceptualization of capability building programs including course designs, curriculum development, research, and assessment of competency requirement;",
-                  "3. Coordinates the capability building programs and projects of the Division/Bureau;",
-                  "4. Prepares, reviews and enhances training proposal/training design;",
-                  "5. Manages/facilitates actual conduct of capability building activities;",
-                  "6. Conducts training evaluation and prepares necessary reports;",
-                  "7. Develops and enhances training manuals/modules;",
-                  "8. Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.; and",
-                  "9. Performs other tasks as may be required by the Chief and/or the Director."
+                  "Responsible for performing overall capability-building roles and functions;",
+                  "Undertakes the conceptualization of capability building programs including course designs, curriculum development, research, and assessment of competency requirement;",
+                  "Coordinates the capability building programs and projects of the Division/Bureau;",
+                  "Prepares, reviews and enhances training proposal/training design;",
+                  "Manages/facilitates actual conduct of capability building activities;",
+                  "Conducts training evaluation and prepares necessary reports;",
+                  "Develops and enhances training manuals/modules;",
+                  "Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.; and",
+                  "Performs other tasks as may be required by the Chief and/or the Director."
                 ]
               },
               { 
@@ -1231,15 +1276,15 @@ export const orgData = {
                 profession: 'Professional Teacher', 
                 tasks: 
                 [
-                  "1. Responsible for performing overall capability-building roles and functions;",
-                  "2. Undertakes the conceptualization of capability-building programs.",
-                  "3. Coordinates the capability-building programs and projects of the Division/Bureau;",
-                  "4. Prepares, reviews, and enhances training proposals/training design;",
-                  "5. Manages/facilitates actual conduct of capability-building activities;",
-                  "6. Conducts training evaluation and prepares necessary reports;",
-                  "7. Develops and enhances training manuals/modules;",
-                  "8. Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.; and",
-                  "9. Performs other tasks as may be required by the Chief and/or the Director."
+                  "Responsible for performing overall capability-building roles and functions;",
+                  "Undertakes the conceptualization of capability-building programs.",
+                  "Coordinates the capability-building programs and projects of the Division/Bureau;",
+                  "Prepares, reviews, and enhances training proposals/training design;",
+                  "Manages/facilitates actual conduct of capability-building activities;",
+                  "Conducts training evaluation and prepares necessary reports;",
+                  "Develops and enhances training manuals/modules;",
+                  "Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.; and",
+                  "Performs other tasks as may be required by the Chief and/or the Director."
                 ] 
               },
               { 
@@ -1247,7 +1292,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Jerick Joshua D. Bautista', 
                 nickname: 'N/A', 
-                image: null, 
+                image: JERICK, 
                 email: 'N/A', 
                 phone: 'N/A', 
                 profession: 'N/A', 
@@ -1259,12 +1304,17 @@ export const orgData = {
                 title: 'SWO III', 
                 type: 'cos', 
                 name: 'Aljohn C. Purca', 
-                nickname: 'Aljohn', 
+                nickname: 'John', 
                 image: ALJOHN, 
                 email: 'acpurca@dswd.gov.ph', 
-                phone: 'N/A', 
-                profession: 'N/A', 
-                tasks: ['N/A'] 
+                phone: '+639630503003', 
+                profession: 'SOCIAL WORKER', 
+                tasks: 
+                [
+                  'Learning Manager',
+                  'Responsible for the day-to-day implementation of the project activities and ensuring that the project is in line with meeting its objectives in a timely manner.',
+                  'Perform different training roles, e.g., training facilitator, resource speaker, training assistant, preparation of documentation works, and responsible for the monitoring of training conducted by the project partners'
+                ] 
               },
               { 
                 title: 'ISA I', 
@@ -1290,20 +1340,20 @@ export const orgData = {
                 profession: 'Social Worker', 
                 tasks: 
                 [
-                  "1. Develop Learning Needs Assessment (LNA) methodologies and approaches aligned with Social Work Practice Competency Standards as a basis for developing Learning and Development (L&D) programs;",
-                  "2. Prepare L&D plans and training designs and activity proposals;",
-                  "3. Implements and manages approved L&D interventions, covering the end-to-end process of planning, delivery, monitoring, evaluation, and documentation of training programs and services;",
-                  "4. Work closely with the CPD Program focal person to plan, monitor, and report on regulatory requirements;",
-                  "5. Provides technical assistance (TA) to DSWD Central Office, Field Offices, and external partners in the planning, development, design, implementation, and documentation of Learning and Development Interventions (LDIs);",
-                  "6. Provides TA to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.;",
-                  "7. Coordinates the capability building programs and projects of the Division/Bureau;",
-                  "8. Conducts training evaluation and prepares necessary reports; and",
-                  "9. Perform other functions as may be assigned by the immediate supervisor and/or the Director in support of the Academy operation."
+                  "Develop Learning Needs Assessment (LNA) methodologies and approaches aligned with Social Work Practice Competency Standards as a basis for developing Learning and Development (L&D) programs;",
+                  "Prepare L&D plans and training designs and activity proposals;",
+                  "Implements and manages approved L&D interventions, covering the end-to-end process of planning, delivery, monitoring, evaluation, and documentation of training programs and services;",
+                  "Work closely with the CPD Program focal person to plan, monitor, and report on regulatory requirements;",
+                  "Provides technical assistance (TA) to DSWD Central Office, Field Offices, and external partners in the planning, development, design, implementation, and documentation of Learning and Development Interventions (LDIs);",
+                  "Provides TA to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.;",
+                  "Coordinates the capability building programs and projects of the Division/Bureau;",
+                  "Conducts training evaluation and prepares necessary reports; and",
+                  "Perform other functions as may be assigned by the immediate supervisor and/or the Director in support of the Academy operation."
                 ] 
               },
               { 
                 title: 'ADAS II', 
-                type: 'cos', 
+                type: 'contractual', 
                 name: 'Jose Tiofisto M. Pacao', 
                 nickname: 'Jops', 
                 image: JOPS, 
@@ -1325,13 +1375,13 @@ export const orgData = {
                 profession: 'Social Worker', 
                 tasks:
                 [
-                  "1. Lead/ co-lead the conceptualization and design of training and capability-building programs, session plans, and instructional materials.",
-                  "2. Provides technical assistance to offices, bureaus, services, and field offices in training design, institutional development, and preparation of capability-building reports.",
-                  "3. Serves as a lead facilitator, co-facilitator, or resource person on relevant training topics and capacity-building activities."
+                  "Lead/ co-lead the conceptualization and design of training and capability-building programs, session plans, and instructional materials.",
+                  "Provides technical assistance to offices, bureaus, services, and field offices in training design, institutional development, and preparation of capability-building reports.",
+                  "Serves as a lead facilitator, co-facilitator, or resource person on relevant training topics and capacity-building activities."
                 ] 
               },
               { 
-                title: 'AAIDE VI', 
+                title: 'AAIDE IV', 
                 type: 'cos', 
                 name: 'Justine Kelly E. Diaz', 
                 nickname: 'Kelly', 
@@ -1375,44 +1425,56 @@ export const orgData = {
               type: 'cos', 
               name: 'Kathleene Jhoy L. Lesaca', 
               nickname: 'Kath', 
-              image: null, 
+              image: KATH, 
               email: 'kjllesaca@dswd.gov.ph', 
               phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              profession: 'Teacher / IT', 
+              tasks: 
+              [
+                'Provides technical, administrative, and coordination support to the T/AAORSS in the development of communication and information materials, implementation of activities, stakeholder coordination, and delivery of project-related requirements.'
+              ] 
             },
             { 
               title: 'SWO III', 
               type: 'cos', 
               name: 'Hardawy A. Baraocor', 
-              nickname: 'N/A', 
-              image: null, 
+              nickname: 'Harvey', 
+              image: HARDAWY, 
               email: 'habaraocor@dswd.gov.ph', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              phone: '+639977983909', 
+              profession: 'Social Worker', 
+              tasks: ['Technical Assistance'] 
             },
             { 
               title: 'SWO III', 
               type: 'cos', 
               name: 'Jessa C. Ella', 
-              nickname: 'N/A', 
-              image: null, 
-              email: 'N/A', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              nickname: 'JESS', 
+              image: JESSA, 
+              email: 'jcella@dswd.gov.ph', 
+              phone: '+639165463234', 
+              profession: 'SOCIAL WORKER', 
+              tasks: ['Facilitate coordination of the program and project management specific to the implementation of policy advocacy activities and rewards  and incentives programs for LGUs specific with LSWDOs'] 
             },
             { 
               title: 'SWO III', 
               type: 'cos', 
               name: 'Glenda Fulong', 
-              nickname: 'Glenda', 
+              nickname: 'Glends', 
               image: GLENDA, 
               email: 'gfulong@dswd.gov.ph', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              phone: '+639770438479', 
+              profession: 'Social Worker', 
+              tasks: 
+              [
+                'Review of Assessment Re: SDCA- IS',
+                'Monitoring of TA plans implementation of LGUs',
+                'Assist in the development and review of a Capacity Development Agenda',
+                'Facilitate the Formulation of a 3–Year Regional TARA P',
+                'Development of key indicators and parameters in setting annual and 3 -year targets for budget appropriation.',
+                'Assist in the preparation of the Budget Execution Documents',
+                'Monitor the implementation of the Regional TARA Plans'
+              ] 
             },
             { 
               title: 'SWO III', 
@@ -1462,13 +1524,13 @@ export const orgData = {
               profession: 'Statistician / Licensed Professional Teacher', 
               tasks: 
               [
-                "1. Lead the Field Offices in the conduct of assessment of LGU Capacity through LSWDOs using assessment and analysis tool.",
-                "2. Facilitate the development and assessment, monitoring, and evaluation tools to assess LGU Capacities.",
-                "3. Manage the Implementation of Service Delivery Capacity Assessment Information System and assist in the enhancement of the information system.",
-                "4. Manage the Divisions Technical Assistance (TA) Database, SDCA, Staff Complement (RSW), and Magna Carta for RSW Databases.",
-                "5. Prepare HPMES Report (monthly, quarterly, semestral and annual) both GAA and OPC statistical narrative accomolishment and other reports required by other stakehholders.",
-                "6. Recommends systems, processes and guidelines that will improve the program operation.",
-                "7. Performs other task as may be required by the Bureau Director and or Division Chiefs."
+                "Lead the Field Offices in the conduct of assessment of LGU Capacity through LSWDOs using assessment and analysis tool.",
+                "Facilitate the development and assessment, monitoring, and evaluation tools to assess LGU Capacities.",
+                "Manage the Implementation of Service Delivery Capacity Assessment Information System and assist in the enhancement of the information system.",
+                "Manage the Divisions Technical Assistance (TA) Database, SDCA, Staff Complement (RSW), and Magna Carta for RSW Databases.",
+                "Prepare HPMES Report (monthly, quarterly, semestral and annual) both GAA and OPC statistical narrative accomolishment and other reports required by other stakehholders.",
+                "Recommends systems, processes and guidelines that will improve the program operation.",
+                "Performs other task as may be required by the Bureau Director and or Division Chiefs."
               ] 
             },
             { 
@@ -1493,8 +1555,8 @@ export const orgData = {
               profession: 'Psychometrician', 
               tasks: 
               [
-                '1. Providing Technical Assistance to regional counterparts',
-                '2. Facilitating the conduct of the PANATA KO SA BAYAN'
+                'Providing Technical Assistance to regional counterparts',
+                'Facilitating the conduct of the PANATA KO SA BAYAN'
               ]
             },
             { 
@@ -1502,11 +1564,16 @@ export const orgData = {
               type: 'cos', 
               name: 'Hannah Ysabelle R. Aguilar', 
               nickname: 'N/A', 
-              image: null, 
+              image: HANNAH, 
               email: 'hyraguilar@dswd.gov.ph', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              phone: '+639260612873', 
+              profession: 'Registered Psychometrician', 
+              tasks: 
+              [
+                'Secretariat Duties',
+                'Database Management',
+                'Budget Monitoring'
+              ] 
             }
           ]
         }
@@ -1540,9 +1607,13 @@ export const orgData = {
               nickname: 'N/A', 
               image: CLIFFORD, 
               email: 'crcgabatin@dswd.gov.ph', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              phone: '+639569226155', 
+              profession: 'Nurse', 
+              tasks: 
+              [
+                'Implementing Competency Needs Analysis',
+                'Learning Management Team'
+              ] 
             },
             { 
               title: 'PDO III', 
@@ -1562,20 +1633,26 @@ export const orgData = {
               nickname: 'Ten', 
               image: KIRSTEN, 
               email: 'kpemaglalang@dswd.gov.ph', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              phone: '+639099461159', 
+              profession: 'Training Specialist', 
+              tasks: 
+              [
+                'CPD Focal',
+                'ARTU Secretariat',
+                'Project Lead',
+                'Learning Management Team'
+              ] 
             },
             { 
               title: 'SWO III', 
               type: 'cos', 
               name: 'Glyza Mae D. Ascrate', 
-              nickname: 'N/A', 
-              image: null, 
+              nickname: 'Gilay', 
+              image: GLYZA, 
               email: 'gmdascrate@dswd.gov.ph', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              phone: '+639120556583', 
+              profession: 'Social Worker', 
+              tasks: ['Learning Management Team'] 
             },
             { 
               title: 'SWO III', 

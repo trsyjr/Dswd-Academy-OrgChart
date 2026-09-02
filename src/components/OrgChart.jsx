@@ -108,69 +108,36 @@ export default function OrgChart() {
   const [isDragging, setIsDragging] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const [bounds, setBounds] = useState({
-    minX: -5000,
-    maxX: 5000,
-    minY: -5000,
-    maxY: 5000
-  });
-
   const viewportRef = useRef(null);
   const contentRef = useRef(null);
   const dragStartRef = useRef({ x: 0, y: 0, panX: 0, panY: 0 });
   const panRef = useRef({ x: 0, y: 20 });
   const animFrameRef = useRef(null);
+  const isDraggingRef = useRef(false);
 
   useEffect(() => {
     panRef.current = { x: panX, y: panY };
   }, [panX, panY]);
 
-  const updateBounds = useCallback(() => {
-    if (!viewportRef.current || !contentRef.current) return bounds;
+  // Clamps pan mathematical bounds without layout-thrashing getBoundingClientRect calls
+  const clampPan = useCallback((targetX, targetY) => {
+    if (!viewportRef.current || !contentRef.current) return { x: targetX, y: targetY };
 
-    const vRect = viewportRef.current.getBoundingClientRect();
-    const cRect = contentRef.current.getBoundingClientRect();
+    const vWidth = viewportRef.current.clientWidth || 1000;
+    const vHeight = viewportRef.current.clientHeight || 1000;
+    const cWidth = (contentRef.current.offsetWidth || 3000) * scale;
+    const cHeight = (contentRef.current.offsetHeight || 3000) * scale;
 
-    const currentWidth = cRect.width * scale;
-    const currentHeight = cRect.height * scale;
+    const maxPanX = Math.max(vWidth * 1.5, cWidth * 1.5);
+    const maxPanY = Math.max(vHeight * 1.5, cHeight * 1.5);
 
-    const horizontalMargin = Math.max(vRect.width * 1.5, currentWidth * 1.5);
-    const verticalMargin = Math.max(vRect.height * 1.5, currentHeight * 1.5);
-
-    const newBounds = {
-      minX: -Math.round(horizontalMargin),
-      maxX: Math.round(horizontalMargin),
-      minY: -Math.round(verticalMargin),
-      maxY: Math.round(verticalMargin)
+    return {
+      x: Math.min(Math.max(targetX, -maxPanX), maxPanX),
+      y: Math.min(Math.max(targetY, -maxPanY), maxPanY),
     };
-
-    setBounds((prevBounds) => {
-      if (
-        prevBounds.minX === newBounds.minX &&
-        prevBounds.maxX === newBounds.maxX &&
-        prevBounds.minY === newBounds.minY &&
-        prevBounds.maxY === newBounds.maxY
-      ) {
-        return prevBounds;
-      }
-      return newBounds;
-    });
-
-    return newBounds;
   }, [scale]);
 
-  const clampPan = useCallback((targetX, targetY) => {
-    const currentBounds = updateBounds();
-    return {
-      x: Math.min(Math.max(targetX, currentBounds.minX), currentBounds.maxX),
-      y: Math.min(Math.max(targetY, currentBounds.minY), currentBounds.maxY),
-    };
-  }, [updateBounds]);
-
-  useEffect(() => {
-    updateBounds();
-  }, [scale, updateBounds]);
-
+  // Smooth wheel zooming & panning
   useEffect(() => {
     const container = viewportRef.current;
     if (!container) return;
@@ -181,6 +148,12 @@ export default function OrgChart() {
         setScale((prev) => Math.min(Math.max(parseFloat((prev - e.deltaY * 0.0015).toFixed(2)), 0.15), 1.5));
       } else {
         const clamped = clampPan(panRef.current.x - e.deltaX, panRef.current.y - e.deltaY);
+        panRef.current = clamped;
+
+        if (contentRef.current) {
+          contentRef.current.style.transform = `translate3d(${clamped.x}px, ${clamped.y}px, 0px) scale(${scale})`;
+        }
+
         setPanX(clamped.x);
         setPanY(clamped.y);
       }
@@ -188,7 +161,7 @@ export default function OrgChart() {
 
     container.addEventListener('wheel', handleWheel, { passive: false });
     return () => container.removeEventListener('wheel', handleWheel);
-  }, [clampPan]);
+  }, [clampPan, scale]);
 
   const handleDragStart = (clientX, clientY, target) => {
     if (target.closest('.interactive-node') || target.closest('button') || target.closest('input')) {
@@ -196,6 +169,7 @@ export default function OrgChart() {
     }
 
     setIsDragging(true);
+    isDraggingRef.current = true;
     dragStartRef.current = {
       x: clientX,
       y: clientY,
@@ -215,8 +189,8 @@ export default function OrgChart() {
     }
   };
 
-  const handleDragMove = (clientX, clientY) => {
-    if (!isDragging) return;
+  const handleDragMove = useCallback((clientX, clientY) => {
+    if (!isDraggingRef.current) return;
 
     const deltaX = clientX - dragStartRef.current.x;
     const deltaY = clientY - dragStartRef.current.y;
@@ -233,7 +207,7 @@ export default function OrgChart() {
         contentRef.current.style.transform = `translate3d(${clamped.x}px, ${clamped.y}px, 0px) scale(${scale})`;
       }
     });
-  };
+  }, [clampPan, scale]);
 
   const handleMouseMove = (e) => handleDragMove(e.clientX, e.clientY);
   const handleTouchMove = (e) => {
@@ -243,9 +217,11 @@ export default function OrgChart() {
   };
 
   const handleDragEnd = () => {
-    if (!isDragging) return;
+    if (!isDraggingRef.current) return;
     setIsDragging(false);
+    isDraggingRef.current = false;
     if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
+
     setPanX(panRef.current.x);
     setPanY(panRef.current.y);
   };
@@ -254,6 +230,10 @@ export default function OrgChart() {
     setScale(0.45);
     setPanX(0);
     setPanY(20);
+    panRef.current = { x: 0, y: 20 };
+    if (contentRef.current) {
+      contentRef.current.style.transform = `translate3d(0px, 20px, 0px) scale(0.45)`;
+    }
   };
 
   const handleNodeInspect = (item) => {
@@ -262,7 +242,7 @@ export default function OrgChart() {
 
   return (
     <div className="w-full h-screen flex flex-col bg-slate-100 text-slate-800 select-none relative overflow-hidden font-sans print:h-auto print:w-full print:bg-white print:overflow-visible">
-      
+
       <style>{`
         @media print {
           @page {
@@ -448,14 +428,18 @@ export default function OrgChart() {
                 </div>
                 <input
                   type="range"
-                  min={bounds.minX}
-                  max={bounds.maxX}
+                  min={-5000}
+                  max={5000}
                   step="1"
                   value={panX}
                   onChange={(e) => {
                     const val = parseFloat(e.target.value);
                     const { x } = clampPan(val, panY);
                     setPanX(x);
+                    panRef.current.x = x;
+                    if (contentRef.current) {
+                      contentRef.current.style.transform = `translate3d(${x}px, ${panY}px, 0px) scale(${scale})`;
+                    }
                   }}
                   className="w-full accent-blue-600 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
                 />
@@ -468,15 +452,18 @@ export default function OrgChart() {
                 </div>
                 <input
                   type="range"
-                  min={bounds.minY}
-                  max={bounds.maxY}
+                  min={-5000}
+                  max={5000}
                   step="1"
-                  value={bounds.maxY - (panY - bounds.minY)}
+                  value={panY}
                   onChange={(e) => {
-                    const rawVal = parseFloat(e.target.value);
-                    const invertedY = bounds.maxY - (rawVal - bounds.minY);
-                    const { y } = clampPan(panX, invertedY);
+                    const val = parseFloat(e.target.value);
+                    const { y } = clampPan(panX, val);
                     setPanY(y);
+                    panRef.current.y = y;
+                    if (contentRef.current) {
+                      contentRef.current.style.transform = `translate3d(${panX}px, ${y}px, 0px) scale(${scale})`;
+                    }
                   }}
                   className="w-full accent-blue-600 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
                 />
@@ -885,7 +872,7 @@ function SectionBranch({ section, onInspect, searchQuery }) {
             {section.stack && (
               <div className="flex flex-col items-center relative">
                 <div className="absolute top-0 bottom-4 left-1/2 -translate-x-1/2 w-0.5 bg-slate-500 z-0 print-tree-connector" />
-                
+
                 <div className="flex flex-col gap-5 relative z-10">
                   {section.stack.map((item, idx) => (
                     <LeafCard key={idx} item={item} onInspect={onInspect} searchQuery={searchQuery} />
