@@ -40,6 +40,9 @@ import LOWE from '../assets/kmd/Lowe.png';
 import LEO from '../assets/kmd/Leo.png';
 import JELLY from '../assets/kmd/Jelly.png';
 import CHE from '../assets/kmd/Che.png';
+import IANA from '../assets/kmd/Iana.jpg';
+import BASCON from '../assets/kmd/Bascon.jpg';
+import KRISTINE from '../assets/kmd/Kristine.png';
 
 //CBD
 import DC from '../assets/cbd/DC.JPG';
@@ -459,7 +462,7 @@ export const orgData = {
                 type: 'cos',
                 name: 'Iana Sherrence O. Rivera',
                 nickname: 'Yana',
-                image: null,
+                image: IANA,
                 email: 'isorivera@dswd.gov.ph',
                 phone: '+639512377586',
                 profession: 'Psychometrician',
@@ -694,7 +697,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Kristine C. Peralta',
                 nickname: 'Tin', 
-                image: null, 
+                image: KRISTINE, 
                 email: 'kcperalta@dswd.gov.ph',
                 phone: '+639674467804',
                 profession: 'Social Worker', 
@@ -712,7 +715,7 @@ export const orgData = {
             type: 'cos', 
             name: 'John Ronald Bascon', 
             nickname: 'John', 
-            image: null,
+            image: BASCON,
             email: 'jrbascon@dswd.gov.ph', 
             phone: '+639947703148', 
             profession: 'N/A',
@@ -1219,7 +1222,7 @@ export const orgData = {
               },
               { 
                 title: 'TS II', 
-                type: 'cos', 
+                type: 'contractual', 
                 name: 'Maria Clarissa D. Raquinel', 
                 nickname: 'Cla', 
                 image: CLA, 
