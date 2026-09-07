@@ -75,6 +75,7 @@ import KELLY from '../assets/cbd/Kelly.png';
 import JEX from '../assets/cbd/Jex.jpeg';
 import JERICK from '../assets/cbd/Jerick.jpeg';
 
+
 //TAAORSS
 import GLO from '../assets/taaorss/Glo.JPG';
 import MAAN from '../assets/taaorss/Maan.JPG';
@@ -96,6 +97,9 @@ import FEM from '../assets/lndd/Fem.JPG';
 import CHA from '../assets/lndd/Cha.JPG';
 import CLIFFORD from '../assets/lndd/Clifford.JPG';
 import GLYZA from '../assets/lndd/Glyza.jpeg';
+import JUSTICE from '../assets/lndd/Justice.png';
+import JASPER from '../assets/lndd/Jasper.png';
+import ABIGAILJOYCE from '../assets/lndd/AbigailJoyce.jpeg';
 
 export const CLASSIFICATION_STYLES = {
   director: {
@@ -1696,12 +1700,17 @@ export const orgData = {
               title: 'AO IV', 
               type: 'cos', 
               name: 'Jasper Nora', 
-              nickname: 'N/A', 
-              image: null, 
-              email: 'N/A', 
-              phone: 'N/A', 
+              nickname: 'Jas', 
+              image: JASPER, 
+              email: 'jjtbanzuela@dswd.gov.ph', 
+              phone: '+639171322747', 
               profession: 'N/A', 
-              tasks: ['N/A'] 
+              tasks: 
+              [
+                'Assist in planning and organizing training programs, workshops, seminars, conferences, and other learning activities.',
+                'Prepare administrative requirements and materials needed for training.',
+                'Coordinate with speakers, facilitators, participants, partner agencies, and DSWD offices.'
+              ] 
             },
             { 
               title: 'AO II', 
@@ -1747,7 +1756,7 @@ export const orgData = {
               type: 'cos', 
               name: 'Abigail Joyce S. Barrera', 
               nickname: 'N/A', 
-              image: null, 
+              image: ABIGAILJOYCE, 
               email: 'ajsbarrera@dswd.gov.ph', 
               phone: 'N/A', 
               profession: 'N/A', 
@@ -1768,10 +1777,10 @@ export const orgData = {
               title: 'PDO II', 
               type: 'cos', 
               name: 'Justice John T. Banzuela', 
-              nickname: 'N/A', 
-              image: null, 
+              nickname: 'Jus', 
+              image: JUSTICE, 
               email: 'jjtbanzuela@dswd.gov.ph', 
-              phone: 'N/A', 
+              phone: '+639171322747', 
               profession: 'N/A', 
               tasks: ['N/A'] 
             },
