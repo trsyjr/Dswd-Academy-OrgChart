@@ -14,6 +14,8 @@ import RHENCY from "../assets/obd/Rhency.JPG";
 import HAROLD from "../assets/obd/Harold.JPG";
 import DADA from "../assets/obd/Dada.JPG";
 import RUBYANNA from "../assets/obd/RubyAnna.jpg";
+import RISSA from "../assets/obd/Rissa.jpeg";
+// import JANERENNIEL from "../assets/obd/JaneRenniel.jpg";
 
 //KM
 import ANGESSE from '../assets/kmd/Angesse.JPG';
@@ -341,15 +343,18 @@ export const orgData = {
           ]
         },
         {
-          title: 'Nurse',
+          title: 'Nurse I',
           type: 'cos',
-          name: 'N/A',
-          nickname: 'N/A',
-          image: null,
-          phone: 'N/A',
-          email: 'N/A',
-          profession: 'N/A',
-          tasks: ['N/A']
+          name: 'Rissa Beth E. Gutierez',
+          nickname: 'Rissa',
+          image: RISSA,
+          phone: '+639487044329',
+          email: 'rbegutierez@dswd.gov.ph',
+          profession: 'Nurse',
+          tasks: 
+          [
+            'Performs daily clinical tasks and drafts, implements, and monitors health and wellness policies and guidelines.'
+          ]
         },
         {
           title: 'Nurse',
@@ -1755,12 +1760,12 @@ export const orgData = {
               title: 'SWO III', 
               type: 'cos', 
               name: 'Abigail Joyce S. Barrera', 
-              nickname: 'N/A', 
+              nickname: 'Abi', 
               image: ABIGAILJOYCE, 
               email: 'ajsbarrera@dswd.gov.ph', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              phone: '+6399362057530', 
+              profession: 'Social Worker', 
+              tasks: ['Certification Team'] 
             },
             { 
               title: 'SWO III', 
