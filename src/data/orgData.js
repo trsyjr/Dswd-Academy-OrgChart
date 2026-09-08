@@ -15,7 +15,7 @@ import HAROLD from "../assets/obd/Harold.JPG";
 import DADA from "../assets/obd/Dada.JPG";
 import RUBYANNA from "../assets/obd/RubyAnna.jpg";
 import RISSA from "../assets/obd/Rissa.jpeg";
-// import JANERENNIEL from "../assets/obd/JaneRenniel.jpg";
+import JANERENNIEL from "../assets/obd/JaneRenniel.jpg";
 
 //KM
 import ANGESSE from '../assets/kmd/Angesse.JPG';
@@ -357,17 +357,22 @@ export const orgData = {
           ]
         },
         {
-          title: 'Nurse',
+          title: 'Nurse II',
           type: 'cos',
-          name: 'N/A',
-          nickname: 'N/A',
-          image: null,
-          phone: 'N/A',
-          email: 'N/A',
-          profession: 'N/A',
+          name: 'Jane Renniel Sangil',
+          nickname: 'Jane',
+          image: JANERENNIEL,
+          phone: '+639164712187',
+          email: 'jrsangil@dswd.gov.ph',
+          profession: 'Nurse',
           tasks: 
           [
-            'N/A',
+            'Health and Wellness Policy Guidelines',
+            'Supervise the Nurse I on duty',
+            'Refer and endorse patients to a healthcare facility or healthcare provider when needed.',
+            'Render first aid.',
+            'Vital Signs monitoring for the patients/employees.',
+            'Health teaching',
           ]
         }
       ],
