@@ -45,6 +45,7 @@ import CHE from '../assets/kmd/Che.png';
 import IANA from '../assets/kmd/Iana.jpg';
 import BASCON from '../assets/kmd/Bascon.jpg';
 import KRISTINE from '../assets/kmd/Kristine.png';
+import JAKE from '../assets/kmd/Jake.JPG';
 
 //CBD
 import DC from '../assets/cbd/DC.JPG';
@@ -102,6 +103,7 @@ import GLYZA from '../assets/lndd/Glyza.jpeg';
 import JUSTICE from '../assets/lndd/Justice.png';
 import JASPER from '../assets/lndd/Jasper.png';
 import ABIGAILJOYCE from '../assets/lndd/AbigailJoyce.jpeg';
+import JUHAIFA from '../assets/lndd/Juhaifa.jpeg';
 
 export const CLASSIFICATION_STYLES = {
   director: {
@@ -795,11 +797,11 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Jake Remphsy P. Dy', 
                 nickname: 'Jake', 
-                image: null, 
+                image: JAKE, 
                 email: 'jrpdy@dswd.gov.ph',
                 phone: 'N/A', 
                 profession: 'N/A',
-                tasks: ['N/A'] 
+                tasks: ['Partnerships'] 
               },
               { 
                 title: 'SWO III', 
@@ -856,10 +858,10 @@ export const orgData = {
               { title: 'HHA III', 
                 type: 'cos', 
                 name: 'Jelly D. Orcales', 
-                nickname: 'N/A', 
+                nickname: 'Jelai', 
                 image: JELLY,
                 email: 'jdorcales@dswd.gov.ph', 
-                phone: 'N/A', 
+                phone: '+639477928815', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
               }
@@ -904,10 +906,10 @@ export const orgData = {
                 title: 'HHA III', 
                 type: 'cos', 
                 name: 'Glenn M. Lozano', 
-                nickname: 'N/A', 
+                nickname: 'Glen', 
                 image: GLENN, 
                 email: 'gmlozano@dswd.gov.ph',
-                phone: 'N/A', 
+                phone: '+639696069778', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
               }
@@ -917,10 +919,10 @@ export const orgData = {
                 title: 'HHA III', 
                 type: 'cos', 
                 name: 'Jessica B. Ungui', 
-                nickname: 'N/A', 
+                nickname: 'Jhe', 
                 image: JESSICA, 
                 email: 'jbungui@dswd.gov.ph',
-                phone: 'N/A', 
+                phone: '+639064588775', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
               },
@@ -931,7 +933,7 @@ export const orgData = {
                 nickname: 'Lowe', 
                 image: LOWE, 
                 email: 'lssaliendres@dswd.gov.ph',
-                phone: 'N/A', 
+                phone: '+639611058170', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
               }
@@ -1699,12 +1701,17 @@ export const orgData = {
               title: 'SWO III', 
               type: 'cos', 
               name: 'Juhaifa M. Imam', 
-              nickname: 'N/A', 
-              image: null, 
+              nickname: 'Zar', 
+              image: JUHAIFA, 
               email: 'jmimam@dswd.gov.ph', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              phone: '+639265975490', 
+              profession: 'Social Welfare Officer', 
+              tasks: 
+              [
+                'GAD secretariat',
+                'Organize meetings of the GAD Focal Point System Technical Working Group',
+                'Prepared minutes and other documents'
+              ] 
             },
             { 
               title: 'AO IV', 
