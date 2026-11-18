@@ -548,14 +548,14 @@ export const orgData = {
             [
               { 
                 title: 'ITO II', 
-                type: 'vacant', 
-                name: 'VACANT', 
-                nickname: 'N/A', 
-                image: null,
-                email: '', 
-                phone: 'N/A',
+                type: 'cos', 
+                name: 'Efricor B. Sakilayan', 
+                nickname: 'Pim', 
+                image: PIM, 
+                email: 'ebsakilayan@dswd.gov.ph',
+                phone: 'N/A', 
                 profession: 'N/A',
-                tasks: ['N/A']
+                tasks: ['N/A'] 
               },
               { 
                 title: 'TS III', 
@@ -782,10 +782,10 @@ export const orgData = {
               { 
                 title: 'PDO III', 
                 type: 'cos', 
-                name: 'Efricor B. Sakilayan', 
-                nickname: 'Pim', 
-                image: PIM, 
-                email: 'ebsakilayan@dswd.gov.ph',
+                name: 'N/A', 
+                nickname: 'N/A', 
+                image: null, 
+                email: 'N/A',
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
@@ -1719,7 +1719,7 @@ export const orgData = {
               name: 'Jasper Nora', 
               nickname: 'Jas', 
               image: JASPER, 
-              email: 'jjtbanzuela@dswd.gov.ph', 
+              email: 'jcnora@dswd.gov.ph', 
               phone: '+639171322747', 
               profession: 'N/A', 
               tasks: 
