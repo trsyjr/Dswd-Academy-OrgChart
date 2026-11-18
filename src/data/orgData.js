@@ -781,8 +781,8 @@ export const orgData = {
               },
               { 
                 title: 'PDO III', 
-                type: 'cos', 
-                name: 'N/A', 
+                type: 'vacant', 
+                name: 'VACANT', 
                 nickname: 'N/A', 
                 image: null, 
                 email: 'N/A',
