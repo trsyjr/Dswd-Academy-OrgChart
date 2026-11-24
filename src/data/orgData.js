@@ -90,6 +90,8 @@ import KATH from '../assets/taaorss/Kath.JPG';
 import HARDAWY from '../assets/taaorss/Hardawy.jpg';
 import JESSA from '../assets/taaorss/Jessa.jpeg';
 import HANNAH from '../assets/taaorss/Hannah.png';
+import KAYE from '../assets/taaorss/Kaye.jpeg';
+import JEFF from '../assets/taaorss/Jeff.png';
 
 //LNDD
 import NORI from '../assets/lndd/Nori.JPG';
@@ -781,14 +783,19 @@ export const orgData = {
               },
               { 
                 title: 'PDO III', 
-                type: 'vacant', 
-                name: 'VACANT', 
-                nickname: 'N/A', 
+                type: 'cos', 
+                name: 'Christian Dave P. Concepcion', 
+                nickname: 'Dave', 
                 image: null, 
-                email: 'N/A',
-                phone: 'N/A', 
+                email: 'cdpconcepcion@dswd.gov.ph',
+                phone: '+639458643650', 
                 profession: 'N/A',
-                tasks: ['N/A'] 
+                tasks: 
+                [
+                  'IT Function',
+                  'Automation of KM Process',
+                  'Consolidate/Harmonizing KM Portal'
+                ] 
               }
             ],
             [
@@ -1071,11 +1078,11 @@ export const orgData = {
             [
               { 
                 title: 'TS III', 
-                type: 'cos', 
-                name: 'Merielle O. Palacio', 
-                nickname: 'Merl', 
-                image: MERL, 
-                email: 'mopalacio@dswd.gov.ph',
+                type: 'vacant', 
+                name: 'N/A', 
+                nickname: 'N/A', 
+                image: null, 
+                email: 'N/A',
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
@@ -1223,13 +1230,13 @@ export const orgData = {
             [
               { 
                 title: 'TS III', 
-                type: 'cos', 
-                name: 'Mark Angel Malapira', 
-                nickname: 'Angel', 
-                image: ANGEL, 
-                email: 'mamalapira@dswd.gov.ph',
-                phone: 'ANGEL', 
-                profession: 'mamalapira@dswd.gov.ph',
+                type: 'vacant', 
+                name: 'N/A', 
+                nickname: 'N/A', 
+                image: null, 
+                email: 'N/A',
+                phone: 'N/A', 
+                profession: 'N/A',
                 tasks: ['N/A'] 
               },
               { 
@@ -1275,24 +1282,16 @@ export const orgData = {
             [
               { 
                 title: 'TS III', 
-                type: 'cos', 
-                name: 'Nikkita Lyka Gracia L. Ermino', 
-                nickname: 'Lyka', 
-                image: LYKA, 
-                email: 'nlglermino@dswd.gov.ph',
-                phone: '+639566589841', 
-                profession: 'SOCIAL WORKER',
+                type: 'vacant', 
+                name: 'N/A', 
+                nickname: 'N/A', 
+                image: null, 
+                email: 'N/A',
+                phone: 'N/A', 
+                profession: 'N/A',
                 tasks: 
                 [
-                  "Responsible for performing overall capability-building roles and functions;",
-                  "Undertakes the conceptualization of capability building programs including course designs, curriculum development, research, and assessment of competency requirement;",
-                  "Coordinates the capability building programs and projects of the Division/Bureau;",
-                  "Prepares, reviews and enhances training proposal/training design;",
-                  "Manages/facilitates actual conduct of capability building activities;",
-                  "Conducts training evaluation and prepares necessary reports;",
-                  "Develops and enhances training manuals/modules;",
-                  "Provides technical assistance to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.; and",
-                  "Performs other tasks as may be required by the Chief and/or the Director."
+                  "N/A"
                 ]
               },
               { 
@@ -1374,24 +1373,16 @@ export const orgData = {
             [
               { 
                 title: 'SWO III', 
-                type: 'cos', 
-                name: 'Christian Nicole D. Dorado', 
-                nickname: 'Nic', 
-                image: NIC, 
-                email: 'cnddorado@dswd.gov.ph', 
-                phone: '+639298988599', 
-                profession: 'Social Worker', 
+                type: 'vacant', 
+                name: 'N/A', 
+                nickname: 'N/A', 
+                image: null, 
+                email: 'N/A', 
+                phone: 'N/A', 
+                profession: 'N/A', 
                 tasks: 
                 [
-                  "Develop Learning Needs Assessment (LNA) methodologies and approaches aligned with Social Work Practice Competency Standards as a basis for developing Learning and Development (L&D) programs;",
-                  "Prepare L&D plans and training designs and activity proposals;",
-                  "Implements and manages approved L&D interventions, covering the end-to-end process of planning, delivery, monitoring, evaluation, and documentation of training programs and services;",
-                  "Work closely with the CPD Program focal person to plan, monitor, and report on regulatory requirements;",
-                  "Provides technical assistance (TA) to DSWD Central Office, Field Offices, and external partners in the planning, development, design, implementation, and documentation of Learning and Development Interventions (LDIs);",
-                  "Provides TA to Offices, Bureaus, and Services (OBS)/Field Offices (FOs) on training design, institutional development and capability building (IDCB) reports, etc.;",
-                  "Coordinates the capability building programs and projects of the Division/Bureau;",
-                  "Conducts training evaluation and prepares necessary reports; and",
-                  "Perform other functions as may be assigned by the immediate supervisor and/or the Director in support of the Academy operation."
+                  "N/A"
                 ] 
               },
               { 
@@ -1521,14 +1512,29 @@ export const orgData = {
             },
             { 
               title: 'SWO III', 
-              type: 'vacant', 
-              name: 'N/A', 
-              nickname: 'N/A', 
-              image: null, 
-              email: 'N/A', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              type: 'cos', 
+              name: 'Kathleen Kaye P. Ibabao', 
+              nickname: 'Kaye', 
+              image: KAYE, 
+              email: 'kkpibabao@dswd.gov.ph', 
+              phone: '+639472096453', 
+              profession: 'Licensed Social Worker', 
+              tasks: 
+              [
+                'Review of assessment of LGU capacity through LSWDOs using existing assessment and analysis tools;',
+                'Monitor the TA Plans implementation of LGUs',
+                'Development and review of a Capacit Development Agenda;',
+                'Facilitate the Formulation of a 3-Year Regional TARA Plan in coordination and consultation with the FO`s Regional Management Team;',
+                'Develop key indicators and parameters in setting annual and 3-year targets for budget appropriation;',
+                'Prepare the Budget Execution Documents and all other planning requirements of the Department;',
+                'Monitor the implementation of the Regional TARA Plans and the achievement of program objectives and targets;',
+                'Collaborate with OBS and FOs in strengthening institutional arrangements for the DSWD TARA Program processes and system;',
+                'Coordinate with partners and stakeholders on matters pertaining to the DSWD TARA Program to ensure that the LGUs/LSWDO are assisted in the improvement of SWD delivery of programs and services;',
+                'Prepare relevant reports as required by the Central Office and other recognized partners and stakeholders;',
+                'Attend regular conference, consultation and monitoring meetings and relevant training to support the TARA Program operation as required;',
+                'Recommend systems, processes and guidelines that will improve the program operation; and',
+                'Performs other tasks as may be required by the Bureau Director and/or Division Chief and Section Chief.'
+              ] 
             },
             { 
               title: 'SWO III', 
@@ -1578,14 +1584,18 @@ export const orgData = {
             },
             { 
               title: 'PDO II', 
-              type: 'vacant', 
-              name: 'N/A', 
-              nickname: 'N/A', 
-              image: null, 
-              email: 'N/A', 
-              phone: 'N/A', 
-              profession: 'N/A', 
-              tasks: ['N/A'] 
+              type: 'cos', 
+              name: 'Jefferson S. Chong', 
+              nickname: 'Jeff', 
+              image: JEFF, 
+              email: 'jeffchong0919@gmail.com', 
+              phone: '+639751140305', 
+              profession: 'Licensed Professional Teacher', 
+              tasks: 
+              [
+                'Data Management Task',
+                'Settling NOMPA & MEMO for Quarterly Meetings'
+              ] 
             },
             { 
               title: 'TS II', 
