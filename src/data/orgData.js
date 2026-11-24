@@ -46,6 +46,7 @@ import IANA from '../assets/kmd/Iana.jpg';
 import BASCON from '../assets/kmd/Bascon.jpg';
 import KRISTINE from '../assets/kmd/Kristine.png';
 import JAKE from '../assets/kmd/Jake.JPG';
+import DAVE from '../assets/kmd/Dave.png';
 
 //CBD
 import DC from '../assets/cbd/DC.JPG';
@@ -786,7 +787,7 @@ export const orgData = {
                 type: 'cos', 
                 name: 'Christian Dave P. Concepcion', 
                 nickname: 'Dave', 
-                image: null, 
+                image: DAVE, 
                 email: 'cdpconcepcion@dswd.gov.ph',
                 phone: '+639458643650', 
                 profession: 'N/A',
