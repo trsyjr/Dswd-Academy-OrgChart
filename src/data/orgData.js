@@ -1242,11 +1242,11 @@ export const orgData = {
               },
               { 
                 title: 'TS III', 
-                type: 'contractual', 
-                name: 'Jena Mae C. Aguilar', 
-                nickname: 'Jena', 
-                image: JENA,
-                email: 'jmcaguilar@dswd.gov.ph', 
+                type: 'vacant', 
+                name: 'N/A', 
+                nickname: 'N/A', 
+                image: null,
+                email: 'N/A', 
                 phone: 'N/A', 
                 profession: 'N/A',
                 tasks: ['N/A'] 
